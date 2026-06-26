@@ -44,16 +44,14 @@ script = ExtResource("1_w25ul")
 
 [node name="Border" type="PanelContainer" parent="." unique_id=1249866340]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 81.0
-offset_bottom = 81.0
+offset_right = 80.0
+offset_bottom = 80.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_dm1l1")
 
 [node name="Point" type="PanelContainer" parent="." unique_id=1189998816]
 layout_mode = 0
-offset_left = 31.0
-offset_top = 29.0
-offset_right = 51.0
-offset_bottom = 49.0
+offset_left = 30.0
+offset_top = 27.0
+offset_right = 50.0
+offset_bottom = 47.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_413m4")

@@ -1,46 +1,37 @@
 extends Control
 
 @onready var point = $Point
-# Asumsi titik tengah joystick mengikuti ukuran Control node-nya
+
 var output_vector: Vector2 = Vector2.ZERO
+var current_touch_index: int = -1
 
-# Variabel untuk mengunci ID jari (-1 artinya belum ada yang pegang)
-var current_touch_index: int = -1 
+func _ready() -> void:
+	await get_tree().process_frame
+	point.position = (size / 2) - (point.size / 2)
 
-func _gui_input(event: InputEvent) -> void:
-	# 1. Saat layar disentuh atau dilepas
+func _input(event: InputEvent) -> void:
 	if event is InputEventScreenTouch:
-		# Jika jari menempel dan joystick sedang nganggur
 		if event.pressed and current_touch_index == -1:
-			current_touch_index = event.index # Kunci ID jari
-			update_joystick(event.position)
-			
-		# Jika jari diangkat dan itu adalah jari yang mengunci joystick ini
+			# Cek apakah sentuhan ada di dalam area joystick
+			if get_global_rect().has_point(event.position):
+				current_touch_index = event.index
+				update_joystick(event.position)
 		elif not event.pressed and event.index == current_touch_index:
-			current_touch_index = -1 # Lepas kuncian
+			current_touch_index = -1
 			output_vector = Vector2.ZERO
-			point.position = size / 2 # Kembalikan titik putih ke tengah
+			point.position = (size / 2) - (point.size / 2)
 
-	# 2. Saat jari digeser
 	elif event is InputEventScreenDrag:
-		# Hanya proses pergeseran jika ID jarinya cocok dengan yang dikunci
 		if event.index == current_touch_index:
 			update_joystick(event.position)
 
-# Fungsi bantuan untuk menghitung pergerakan titik putih
 func update_joystick(touch_position: Vector2) -> void:
-	var center = size / 2
+	var center = global_position + size / 2  # pakai global karena input pakai global coords
 	var radius = size.x / 2
-	
-	# Jarak posisi sentuhan dari titik tengah joystick
 	var local_pos = touch_position - center
-	
-	# Cegah titik putih keluar dari batas lingkaran
+
 	if local_pos.length() > radius:
 		local_pos = local_pos.normalized() * radius
-		
-	# Geser titik putih
-	point.position = center + local_pos
-	
-	# Simpan arah untuk dikirim ke capybara (bernilai -1 sampai 1)
-	output_vector = local_pos.normalized()
+
+	point.position = (size / 2) + local_pos - (point.size / 2)
+	output_vector = local_pos / radius  # normalized -1 to 1
