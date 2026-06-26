@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://pfg4mtqvjqe8"]
+
+[ext_resource type="Script" uid="uid://c3ri2ftykofqb" path="res://joystick.gd" id="1_w25ul"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dm1l1"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_413m4"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(6.687655, 6.687655, 6.687655, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 20
+
+[node name="Joystick" type="Control" unique_id=371172085]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1072.0
+offset_bottom = -568.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_w25ul")
+
+[node name="Border" type="PanelContainer" parent="." unique_id=1249866340]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 81.0
+offset_bottom = 81.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dm1l1")
+
+[node name="Point" type="PanelContainer" parent="." unique_id=1189998816]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 29.0
+offset_right = 51.0
+offset_bottom = 49.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_413m4")

@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://dqkho33ln85sb"]
+
+[ext_resource type="Texture2D" uid="uid://dx6xudlsjgpko" path="res://art/tilesets/outside_arena.png" id="1_hk13r"]
+[ext_resource type="PackedScene" uid="uid://chk6tbh4anjqe" path="res://art/characters/player_capy.tscn" id="1_ll864"]
+[ext_resource type="Texture2D" uid="uid://bp07t0g60d5i5" path="res://art/tilesets/arena.png" id="2_l1csk"]
+[ext_resource type="Script" uid="uid://bhsdktdtoth0n" path="res://scenes/test/arena.gd" id="3_pudue"]
+[ext_resource type="PackedScene" uid="uid://dwv51gkca88kq" path="res://scenes/test/grass.tscn" id="5_dfvrc"]
+[ext_resource type="PackedScene" uid="uid://pfg4mtqvjqe8" path="res://joystick.tscn" id="6_dfvrc"]
+
+[node name="TestSceneTilesMap" type="Node2D" unique_id=311747993]
+
+[node name="OutsideArena" type="Sprite2D" parent="." unique_id=389830449]
+position = Vector2(729.5, 451.375)
+scale = Vector2(0.9144738, 0.94713056)
+texture = ExtResource("1_hk13r")
+
+[node name="Arena" type="Sprite2D" parent="." unique_id=1936357486]
+position = Vector2(620.06256, 350.9375)
+scale = Vector2(0.63785875, 0.56947756)
+texture = ExtResource("2_l1csk")
+script = ExtResource("3_pudue")
+grass_scene = ExtResource("5_dfvrc")
+
+[node name="PlayerCapy" parent="Arena" unique_id=1764218114 node_paths=PackedStringArray("joystick_node") groups=["capybara"] instance=ExtResource("1_ll864")]
+position = Vector2(17.070827, -14.849026)
+player_id = 1
+move_speed = 300.0
+arena_radius = 280.0
+growth_per_grass = 0.15
+max_scale = 3.0
+outside_scale = 0.4
+transition_speed = 0.25
+bounce_force = 400.0
+joystick_node = NodePath("../../CanvasLayer/Joystick")
+
+[node name="PlayerCapy2" parent="Arena" unique_id=987455586 node_paths=PackedStringArray("joystick_node") groups=["capybara"] instance=ExtResource("1_ll864")]
+position = Vector2(-240.94745, 148.97595)
+rotation = 0.007201472
+scale = Vector2(1.5334761, 1.625932)
+player_id = 2
+move_speed = 300.0
+arena_radius = 280.0
+growth_per_grass = 0.15
+max_scale = 3.0
+outside_scale = 0.4
+transition_speed = 0.25
+bounce_force = 400.0
+joystick_node = NodePath("../../CanvasLayer/Joystick2")
+
+[node name="Grass" parent="Arena" unique_id=13430623 instance=ExtResource("5_dfvrc")]
+grass_scene = ExtResource("5_dfvrc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1045075174]
+
+[node name="Joystick" parent="CanvasLayer" unique_id=371172085 instance=ExtResource("6_dfvrc")]
+anchors_preset = -1
+anchor_left = -0.0017361111
+anchor_top = -0.0030864198
+anchor_right = 1.0486112
+anchor_bottom = 1.0864196
+offset_left = 65.0
+offset_top = 89.0
+offset_right = -1007.0
+offset_bottom = -479.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Joystick2" parent="CanvasLayer" unique_id=602375391 instance=ExtResource("6_dfvrc")]
+anchors_preset = -1
+anchor_left = -0.050347224
+anchor_top = -0.08950617
+offset_left = 1067.0
+offset_top = 563.0
+offset_right = -5.0
+offset_bottom = -5.0
+metadata/_edit_use_anchors_ = true

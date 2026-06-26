@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://dwv51gkca88kq"]
+
+[ext_resource type="Script" uid="uid://bw2o7cn1ih2w4" path="res://scenes/test/grass.gd" id="1_y05vj"]
+[ext_resource type="Texture2D" uid="uid://7lpy84k6xfea" path="res://art/objects/spritesheet.png" id="2_y05vj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_il2xo"]
+atlas = ExtResource("2_y05vj")
+region = Rect2(504, 0, 168, 158)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_map7d"]
+atlas = ExtResource("2_y05vj")
+region = Rect2(336, 0, 168, 158)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ounr"]
+atlas = ExtResource("2_y05vj")
+region = Rect2(168, 0, 168, 158)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0j74b"]
+atlas = ExtResource("2_y05vj")
+region = Rect2(0, 0, 168, 158)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mt0l"]
+atlas = ExtResource("2_y05vj")
+region = Rect2(168, 0, 168, 158)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y05vj"]
+atlas = ExtResource("2_y05vj")
+region = Rect2(168, 0, 168, 158)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q8jvn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_il2xo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_map7d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ounr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0j74b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0mt0l")
+}],
+"loop": 1,
+"name": &"appear",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y05vj")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_751gp"]
+radius = 43.046486
+
+[node name="Grass" type="Area2D" unique_id=13430623]
+script = ExtResource("1_y05vj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1363503038]
+sprite_frames = SubResource("SpriteFrames_q8jvn")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1150203692]
+shape = SubResource("CircleShape2D_751gp")

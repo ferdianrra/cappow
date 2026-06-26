@@ -1,0 +1,194 @@
+2026-06-25 07:46:10 +0000 [MT] Initial pipeline context: <IDEDistributionProcessingPipelineContext: 0x9101c0c00; archive(resolved)="<IDEArchive: 0x9107dbe90>", distributionTask(resolved)="2", distributionDestination(resolved)="1", distributionMethod(resolved)="<IDEDistributionMethodDevelopmentSigned: 0x9107f3aa0>", team(resolved)="<IDEProvisioningBasicTeam: 0x9102d90c0; teamID='3SFYM6B225', teamName='(null)'>">
+	Chain (14, self inclusive):
+	<IDEDistributionProcessingPipelineContext: 0x9101c0c00; archive = "<IDEArchive: 0x9107dbe90>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0x9107f3aa0>", team="<IDEProvisioningBasicTeam: 0x9102d90c0; teamID='3SFYM6B225', teamName='(null)'>">
+	<IDEDistributionProcessingPipelineContext: 0x9101c1200; archive = "<IDEArchive: 0x9107dbe90>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0x9107f3aa0>", team="<IDEProvisioningBasicTeam: 0x9102d90c0; teamID='3SFYM6B225', teamName='(null)'>">
+	<IDEDistributionContext: 0x910296580; archive = "<IDEArchive: 0x9107dbe90>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0x9107f3aa0>", team="<IDEProvisioningBasicTeam: 0x9102d90c0; teamID='3SFYM6B225', teamName='(null)'>">
+	<IDEDistributionContext: 0x910296080; archive = "<IDEArchive: 0x9107dbe90>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0x9107f3aa0>", team="<IDEProvisioningBasicTeam: 0x9102d90c0; teamID='3SFYM6B225', teamName='(null)'>">
+	<IDEDistributionContext: 0x910295e00; archive = "<IDEArchive: 0x9107dbe90>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0x9107f3aa0>", team="<IDEProvisioningBasicTeam: 0x9102d90c0; teamID='3SFYM6B225', teamName='(null)'>">
+	<IDEDistributionContext: 0x910295b80; archive = "<IDEArchive: 0x9107dbe90>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0x9107f3aa0>", team="<IDEProvisioningBasicTeam: 0x9102d90c0; teamID='3SFYM6B225', teamName='(null)'>">
+	<IDEDistributionContext: 0x910295900; archive = "<IDEArchive: 0x9107dbe90>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0x9107f3aa0>", team="<IDEProvisioningBasicTeam: 0x9102d90c0; teamID='3SFYM6B225', teamName='(null)'>">
+	<IDEDistributionContext: 0x910295680; archive = "<IDEArchive: 0x9107dbe90>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0x9107f3aa0>", team="<IDEProvisioningBasicTeam: 0x9102d90c0; teamID='3SFYM6B225', teamName='(null)'>">
+	<IDEDistributionContext: 0x910294f00; archive = "<IDEArchive: 0x9107dbe90>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0x9107f3aa0>", team="<IDEProvisioningBasicTeam: 0x9102d90c0; teamID='3SFYM6B225', teamName='(null)'>">
+	<IDEDistributionContext: 0x910294c80; archive = "<IDEArchive: 0x9107dbe90>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0x9107f3aa0>", team="(null)">
+	<IDEDistributionContext: 0x910294a00; archive = "<IDEArchive: 0x9107dbe90>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0x9107f3aa0>", team="(null)">
+	<IDEDistributionContext: 0x910294780; archive = "<IDEArchive: 0x9107dbe90>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0x9107f3aa0>", team="(null)">
+	<IDEDistributionContext: 0x910294000; archive = "<IDEArchive: 0x9107dbe90>", distributionMethod="<IDEDistributionMethodDevelopmentSigned: 0x9107f3aa0>", team="(null)">
+	<IDEDistributionContext: 0x105a5e9f0; archive = "<IDEArchive: 0x9107dbe90>", distributionMethod="(null)", team="(null)">
+</IDEDistributionProcessingPipelineContext: 0x9101c0c00>
+2026-06-25 07:46:10 +0000 [MT] Processing step: IDEDistributionCreateDestRootStep
+2026-06-25 07:46:10 +0000 [MT] Processing step: IDEDistributionCopyItemStep
+2026-06-25 07:46:10 +0000 [MT] Running /usr/bin/ditto '-V' '/Users/ferdiansyahannora/cap-pow!/CapPow!.xcarchive/Products/Applications/CapPow!.app' '/var/folders/n2/s2_5zgmd4t56hxs4dlxj6x7c0000gn/T/XcodeDistPipeline.~~~hh9uVG/Root/Payload/CapPow!.app'
+2026-06-25 07:46:10 +0000  >>> Copying /Users/ferdiansyahannora/cap-pow!/CapPow!.xcarchive/Products/Applications/CapPow!.app 
+2026-06-25 07:46:10 +0000  copying file ./_CodeSignature/CodeResources ... 
+2026-06-25 07:46:10 +0000  4674 bytes for ./_CodeSignature/CodeResources
+2026-06-25 07:46:10 +0000  copying file ./en.lproj/InfoPlist.strings ... 
+2026-06-25 07:46:10 +0000  42 bytes for ./en.lproj/InfoPlist.strings
+2026-06-25 07:46:10 +0000  copying file ./CapPow! ... 
+2026-06-25 07:46:10 +0000  71196928 bytes for ./CapPow!
+2026-06-25 07:46:10 +0000  copying file ./AppIcon60x60@2x.png ... 
+2026-06-25 07:46:10 +0000  8298 bytes for ./AppIcon60x60@2x.png
+2026-06-25 07:46:10 +0000  copying file ./Launch Screen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib ... 
+2026-06-25 07:46:10 +0000  2104 bytes for ./Launch Screen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib
+2026-06-25 07:46:10 +0000  copying file ./Launch Screen.storyboardc/UIViewController-01J-lp-oVM.nib ... 
+2026-06-25 07:46:10 +0000  924 bytes for ./Launch Screen.storyboardc/UIViewController-01J-lp-oVM.nib
+2026-06-25 07:46:10 +0000  copying file ./Launch Screen.storyboardc/Info.plist ... 
+2026-06-25 07:46:10 +0000  258 bytes for ./Launch Screen.storyboardc/Info.plist
+2026-06-25 07:46:10 +0000  copying file ./CapPow!.pck ... 
+2026-06-25 07:46:10 +0000  2495248 bytes for ./CapPow!.pck
+2026-06-25 07:46:10 +0000  copying file ./Assets.car ... 
+2026-06-25 07:46:10 +0000  855080 bytes for ./Assets.car
+2026-06-25 07:46:10 +0000  copying file ./AppIcon76x76@2x~ipad.png ... 
+2026-06-25 07:46:10 +0000  12210 bytes for ./AppIcon76x76@2x~ipad.png
+2026-06-25 07:46:10 +0000  copying file ./PrivacyInfo.xcprivacy ... 
+2026-06-25 07:46:10 +0000  990 bytes for ./PrivacyInfo.xcprivacy
+2026-06-25 07:46:10 +0000  copying file ./Frameworks/libswift_Concurrency.dylib ... 
+2026-06-25 07:46:10 +0000  552560 bytes for ./Frameworks/libswift_Concurrency.dylib
+2026-06-25 07:46:10 +0000  copying file ./embedded.mobileprovision ... 
+2026-06-25 07:46:10 +0000  12237 bytes for ./embedded.mobileprovision
+2026-06-25 07:46:10 +0000  copying file ./Info.plist ... 
+2026-06-25 07:46:10 +0000  1780 bytes for ./Info.plist
+2026-06-25 07:46:10 +0000  copying file ./PkgInfo ... 
+2026-06-25 07:46:10 +0000  8 bytes for ./PkgInfo
+2026-06-25 07:46:10 +0000 [MT] /usr/bin/ditto exited with 0
+2026-06-25 07:46:10 +0000 [MT] Processing step: IDEDistributionEmbedProfileStep
+2026-06-25 07:46:10 +0000 [MT] Skipping profile for item: <IDEDistributionItem: 0x9128b8240; bundleID='com.apple.dt.runtime.swiftConcurrency', path='<DVTFilePath:0x910232df0:'/Users/ferdiansyahannora/cap-pow!/CapPow!.xcarchive/Products/Applications/CapPow!.app/Frameworks/libswift_Concurrency.dylib'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x9128b80c0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x912770540; name='Apple Development: ferdiansyah.annora@gmail.com (75SHU4UMN3)', hash='8B1A0C9127CA41EEA80F3A006E937EB546E1DE42', serialNumber='1845D07513CC73E13D6A9991D5FE8917', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2026-03-03 14:21:10 +0000''>', entitlements='(null)', teamID='3SFYM6B225', identifier='com.apple.dt.runtime.swiftConcurrency', executablePath='<DVTFilePath:0x910232df0:'/Users/ferdiansyahannora/cap-pow!/CapPow!.xcarchive/Products/Applications/CapPow!.app/Frameworks/libswift_Concurrency.dylib'>', hardenedRuntime='0'>'>
+2026-06-25 07:46:10 +0000 [MT] Processing step: IDEDistributionInfoPlistStep
+2026-06-25 07:46:10 +0000 [MT] Skipping step: IDEDistributionInfoPlistStep because it said so
+2026-06-25 07:46:10 +0000 [MT] Skipping step: IDEDistributionInfoPlistStep because it said so
+2026-06-25 07:46:10 +0000 [MT] Processing step: IDEDistributionAppThinningPlistStep
+2026-06-25 07:46:10 +0000 [MT] Skipping step: IDEDistributionAppThinningPlistStep because it said so
+2026-06-25 07:46:10 +0000 [MT] Processing step: IDEDistributionSymbolsStep
+2026-06-25 07:46:10 +0000 [MT] Skipping step: IDEDistributionSymbolsStep because it said so
+2026-06-25 07:46:10 +0000 [MT] Processing step: IDEDistributionAppThinningStep
+2026-06-25 07:46:10 +0000 [MT] Skipping step: IDEDistributionAppThinningStep because it said so
+2026-06-25 07:46:10 +0000 [MT] Processing step: IDEDistributionArchThinningStep
+2026-06-25 07:46:10 +0000 [MT] Archs to thin for item /Users/ferdiansyahannora/cap-pow!/CapPow!.xcarchive/Products/Applications/CapPow!.app/Frameworks/libswift_Concurrency.dylib are []
+2026-06-25 07:46:10 +0000 [MT] Archs to thin for item /Users/ferdiansyahannora/cap-pow!/CapPow!.xcarchive/Products/Applications/CapPow!.app are []
+2026-06-25 07:46:10 +0000 [MT] Processing step: IDEDistributionODRStep
+2026-06-25 07:46:10 +0000 [MT] Processing step: IDEDistributionStripXattrsStep
+2026-06-25 07:46:10 +0000 [MT] Skipping stripping extended attributes because the codesign step will strip them.
+2026-06-25 07:46:10 +0000 [MT] Skipping stripping extended attributes because the codesign step will strip them.
+2026-06-25 07:46:10 +0000 [MT] Processing step: IDEDistributionCodesignStep
+2026-06-25 07:46:10 +0000 [MT] Entitlements for <IDEDistributionItem: 0x9128b8240; bundleID='com.apple.dt.runtime.swiftConcurrency', path='<DVTFilePath:0x910232df0:'/Users/ferdiansyahannora/cap-pow!/CapPow!.xcarchive/Products/Applications/CapPow!.app/Frameworks/libswift_Concurrency.dylib'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x9128b80c0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x912770540; name='Apple Development: ferdiansyah.annora@gmail.com (75SHU4UMN3)', hash='8B1A0C9127CA41EEA80F3A006E937EB546E1DE42', serialNumber='1845D07513CC73E13D6A9991D5FE8917', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2026-03-03 14:21:10 +0000''>', entitlements='(null)', teamID='3SFYM6B225', identifier='com.apple.dt.runtime.swiftConcurrency', executablePath='<DVTFilePath:0x910232df0:'/Users/ferdiansyahannora/cap-pow!/CapPow!.xcarchive/Products/Applications/CapPow!.app/Frameworks/libswift_Concurrency.dylib'>', hardenedRuntime='0'>'>: {
+}
+2026-06-25 07:46:10 +0000 [MT] Associated App Clip Identifiers Filter: Skipping because "com.apple.developer.associated-appclip-app-identifiers" is not present
+2026-06-25 07:46:10 +0000 [MT] Entitlements for <IDEDistributionItem: 0x9128b8240; bundleID='com.apple.dt.runtime.swiftConcurrency', path='<DVTFilePath:0x910232df0:'/Users/ferdiansyahannora/cap-pow!/CapPow!.xcarchive/Products/Applications/CapPow!.app/Frameworks/libswift_Concurrency.dylib'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x9128b80c0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x912770900; name='Apple Development: ferdiansyah.annora@gmail.com (75SHU4UMN3)', hash='8B1A0C9127CA41EEA80F3A006E937EB546E1DE42', serialNumber='1845D07513CC73E13D6A9991D5FE8917', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2026-03-03 14:21:10 +0000''>', entitlements='(null)', teamID='3SFYM6B225', identifier='com.apple.dt.runtime.swiftConcurrency', executablePath='<DVTFilePath:0x910232df0:'/Users/ferdiansyahannora/cap-pow!/CapPow!.xcarchive/Products/Applications/CapPow!.app/Frameworks/libswift_Concurrency.dylib'>', hardenedRuntime='0'>'> are: {
+}
+2026-06-25 07:46:10 +0000 [MT] Writing entitlements for <IDEDistributionItem: 0x9128b8240; bundleID='com.apple.dt.runtime.swiftConcurrency', path='<DVTFilePath:0x910232df0:'/Users/ferdiansyahannora/cap-pow!/CapPow!.xcarchive/Products/Applications/CapPow!.app/Frameworks/libswift_Concurrency.dylib'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x9128b80c0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x912770900; name='Apple Development: ferdiansyah.annora@gmail.com (75SHU4UMN3)', hash='8B1A0C9127CA41EEA80F3A006E937EB546E1DE42', serialNumber='1845D07513CC73E13D6A9991D5FE8917', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2026-03-03 14:21:10 +0000''>', entitlements='(null)', teamID='3SFYM6B225', identifier='com.apple.dt.runtime.swiftConcurrency', executablePath='<DVTFilePath:0x910232df0:'/Users/ferdiansyahannora/cap-pow!/CapPow!.xcarchive/Products/Applications/CapPow!.app/Frameworks/libswift_Concurrency.dylib'>', hardenedRuntime='0'>'> to: /var/folders/n2/s2_5zgmd4t56hxs4dlxj6x7c0000gn/T/XcodeDistPipeline.~~~hh9uVG/entitlements~~~gLe4N4
+2026-06-25 07:46:10 +0000 [MT] invoking codesign: <NSConcreteTask: 0x912a76350; launchPath='/usr/bin/codesign', arguments='(
+    "-f",
+    "-s",
+    8B1A0C9127CA41EEA80F3A006E937EB546E1DE42,
+    "--entitlements",
+    "/var/folders/n2/s2_5zgmd4t56hxs4dlxj6x7c0000gn/T/XcodeDistPipeline.~~~hh9uVG/entitlements~~~gLe4N4",
+    "--preserve-metadata=identifier,flags,runtime,launch-constraints,library-constraints",
+    "--generate-entitlement-der",
+    "--strip-disallowed-xattrs",
+    "-vvv",
+    "/var/folders/n2/s2_5zgmd4t56hxs4dlxj6x7c0000gn/T/XcodeDistPipeline.~~~hh9uVG/Root/Payload/CapPow!.app/Frameworks/libswift_Concurrency.dylib"
+)'>
+2026-06-25 07:46:10 +0000 [MT] codesign output: /var/folders/n2/s2_5zgmd4t56hxs4dlxj6x7c0000gn/T/XcodeDistPipeline.~~~hh9uVG/Root/Payload/CapPow!.app/Frameworks/libswift_Concurrency.dylib: replacing existing signature
+/var/folders/n2/s2_5zgmd4t56hxs4dlxj6x7c0000gn/T/XcodeDistPipeline.~~~hh9uVG/Root/Payload/CapPow!.app/Frameworks/libswift_Concurrency.dylib: signed Mach-O thin (arm64) [com.apple.dt.runtime.swiftConcurrency]
+2026-06-25 07:46:10 +0000 [MT] Entitlements for <IDEDistributionItem: 0x9128b8540; bundleID='com.developer.cappow', path='<DVTFilePath:0x912669440:'/Users/ferdiansyahannora/cap-pow!/CapPow!.xcarchive/Products/Applications/CapPow!.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x9128b85a0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x912770540; name='Apple Development: ferdiansyah.annora@gmail.com (75SHU4UMN3)', hash='8B1A0C9127CA41EEA80F3A006E937EB546E1DE42', serialNumber='1845D07513CC73E13D6A9991D5FE8917', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2026-03-03 14:21:10 +0000''>', entitlements='{
+    "application-identifier" = "3SFYM6B225.com.developer.cappow";
+    "com.apple.developer.team-identifier" = 3SFYM6B225;
+    "get-task-allow" = 1;
+}', teamID='3SFYM6B225', identifier='com.developer.cappow', executablePath='<DVTFilePath:0x91266aa60:'/Users/ferdiansyahannora/cap-pow!/CapPow!.xcarchive/Products/Applications/CapPow!.app/CapPow!'>', hardenedRuntime='0'>'>: {
+    "application-identifier" = "3SFYM6B225.com.developer.cappow";
+    "com.apple.developer.team-identifier" = 3SFYM6B225;
+    "get-task-allow" = 1;
+}
+2026-06-25 07:46:10 +0000 [MT] Associated App Clip Identifiers Filter: Skipping because "com.apple.developer.associated-appclip-app-identifiers" is not present
+2026-06-25 07:46:10 +0000 [MT] Entitlements for <IDEDistributionItem: 0x9128b8540; bundleID='com.developer.cappow', path='<DVTFilePath:0x912669440:'/Users/ferdiansyahannora/cap-pow!/CapPow!.xcarchive/Products/Applications/CapPow!.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x9128b85a0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x912770900; name='Apple Development: ferdiansyah.annora@gmail.com (75SHU4UMN3)', hash='8B1A0C9127CA41EEA80F3A006E937EB546E1DE42', serialNumber='1845D07513CC73E13D6A9991D5FE8917', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2026-03-03 14:21:10 +0000''>', entitlements='{
+    "application-identifier" = "3SFYM6B225.com.developer.cappow";
+    "com.apple.developer.team-identifier" = 3SFYM6B225;
+    "get-task-allow" = 1;
+}', teamID='3SFYM6B225', identifier='com.developer.cappow', executablePath='<DVTFilePath:0x91266aa60:'/Users/ferdiansyahannora/cap-pow!/CapPow!.xcarchive/Products/Applications/CapPow!.app/CapPow!'>', hardenedRuntime='0'>'> are: {
+    "application-identifier" = "3SFYM6B225.com.developer.cappow";
+    "com.apple.developer.team-identifier" = 3SFYM6B225;
+    "get-task-allow" = 1;
+}
+2026-06-25 07:46:10 +0000 [MT] Writing entitlements for <IDEDistributionItem: 0x9128b8540; bundleID='com.developer.cappow', path='<DVTFilePath:0x912669440:'/Users/ferdiansyahannora/cap-pow!/CapPow!.xcarchive/Products/Applications/CapPow!.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x9128b85a0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x912770900; name='Apple Development: ferdiansyah.annora@gmail.com (75SHU4UMN3)', hash='8B1A0C9127CA41EEA80F3A006E937EB546E1DE42', serialNumber='1845D07513CC73E13D6A9991D5FE8917', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2026-03-03 14:21:10 +0000''>', entitlements='{
+    "application-identifier" = "3SFYM6B225.com.developer.cappow";
+    "com.apple.developer.team-identifier" = 3SFYM6B225;
+    "get-task-allow" = 1;
+}', teamID='3SFYM6B225', identifier='com.developer.cappow', executablePath='<DVTFilePath:0x91266aa60:'/Users/ferdiansyahannora/cap-pow!/CapPow!.xcarchive/Products/Applications/CapPow!.app/CapPow!'>', hardenedRuntime='0'>'> to: /var/folders/n2/s2_5zgmd4t56hxs4dlxj6x7c0000gn/T/XcodeDistPipeline.~~~hh9uVG/entitlements~~~49DMSC
+2026-06-25 07:46:10 +0000 [MT] invoking codesign: <NSConcreteTask: 0x912a76490; launchPath='/usr/bin/codesign', arguments='(
+    "-f",
+    "-s",
+    8B1A0C9127CA41EEA80F3A006E937EB546E1DE42,
+    "--entitlements",
+    "/var/folders/n2/s2_5zgmd4t56hxs4dlxj6x7c0000gn/T/XcodeDistPipeline.~~~hh9uVG/entitlements~~~49DMSC",
+    "--preserve-metadata=identifier,flags,runtime,launch-constraints,library-constraints",
+    "--generate-entitlement-der",
+    "--strip-disallowed-xattrs",
+    "-vvv",
+    "/var/folders/n2/s2_5zgmd4t56hxs4dlxj6x7c0000gn/T/XcodeDistPipeline.~~~hh9uVG/Root/Payload/CapPow!.app"
+)'>
+2026-06-25 07:46:10 +0000 [MT] codesign output: /var/folders/n2/s2_5zgmd4t56hxs4dlxj6x7c0000gn/T/XcodeDistPipeline.~~~hh9uVG/Root/Payload/CapPow!.app: replacing existing signature
+/var/folders/n2/s2_5zgmd4t56hxs4dlxj6x7c0000gn/T/XcodeDistPipeline.~~~hh9uVG/Root/Payload/CapPow!.app: signed app bundle with Mach-O thin (arm64) [com.developer.cappow]
+2026-06-25 07:46:10 +0000 [MT] Processing step: IDEDistributionZipODRItemStep
+2026-06-25 07:46:10 +0000 [MT] Skipping step: IDEDistributionZipODRItemStep because it said so
+2026-06-25 07:46:10 +0000 [MT] Skipping step: IDEDistributionZipODRItemStep because it said so
+2026-06-25 07:46:10 +0000 [MT] Processing step: IDEDistributionCreateIPAStep
+2026-06-25 07:46:10 +0000 [MT] Running /usr/bin/ditto '-V' '-c' '-k' '--norsrc' '/var/folders/n2/s2_5zgmd4t56hxs4dlxj6x7c0000gn/T/XcodeDistPipeline.~~~hh9uVG/Root' '/var/folders/n2/s2_5zgmd4t56hxs4dlxj6x7c0000gn/T/XcodeDistPipeline.~~~hh9uVG/Packages/CapPow!.ipa'
+2026-06-25 07:46:10 +0000  >>> Copying /var/folders/n2/s2_5zgmd4t56hxs4dlxj6x7c0000gn/T/XcodeDistPipeline.~~~hh9uVG/Root 
+2026-06-25 07:46:10 +0000  copying file ./Payload/CapPow!.app/_CodeSignature/CodeResources ... 
+2026-06-25 07:46:10 +0000  4674 bytes for ./Payload/CapPow!.app/_CodeSignature/CodeResources
+2026-06-25 07:46:10 +0000  copying file ./Payload/CapPow!.app/en.lproj/InfoPlist.strings ... 
+2026-06-25 07:46:10 +0000  42 bytes for ./Payload/CapPow!.app/en.lproj/InfoPlist.strings
+2026-06-25 07:46:10 +0000  copying file ./Payload/CapPow!.app/CapPow! ... 
+2026-06-25 07:46:11 +0000  71196928 bytes for ./Payload/CapPow!.app/CapPow!
+2026-06-25 07:46:11 +0000  copying file ./Payload/CapPow!.app/AppIcon60x60@2x.png ... 
+8298 bytes for ./Payload/CapPow!.app/AppIcon60x60@2x.png
+copying file ./Payload/CapPow!.app/Launch Screen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib ... 
+2026-06-25 07:46:11 +0000  2104 bytes for ./Payload/CapPow!.app/Launch Screen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib
+2026-06-25 07:46:11 +0000  copying file ./Payload/CapPow!.app/Launch Screen.storyboardc/UIViewController-01J-lp-oVM.nib ... 
+2026-06-25 07:46:11 +0000  924 bytes for ./Payload/CapPow!.app/Launch Screen.storyboardc/UIViewController-01J-lp-oVM.nib
+copying file ./Payload/CapPow!.app/Launch Screen.storyboardc/Info.plist ... 
+2026-06-25 07:46:11 +0000  258 bytes for ./Payload/CapPow!.app/Launch Screen.storyboardc/Info.plist
+2026-06-25 07:46:11 +0000  copying file ./Payload/CapPow!.app/CapPow!.pck ... 
+2026-06-25 07:46:11 +0000  2495248 bytes for ./Payload/CapPow!.app/CapPow!.pck
+2026-06-25 07:46:11 +0000  copying file ./Payload/CapPow!.app/Assets.car ... 
+2026-06-25 07:46:11 +0000  855080 bytes for ./Payload/CapPow!.app/Assets.car
+2026-06-25 07:46:11 +0000  copying file ./Payload/CapPow!.app/AppIcon76x76@2x~ipad.png ... 
+2026-06-25 07:46:11 +0000  12210 bytes for ./Payload/CapPow!.app/AppIcon76x76@2x~ipad.png
+2026-06-25 07:46:11 +0000  copying file ./Payload/CapPow!.app/PrivacyInfo.xcprivacy ... 
+2026-06-25 07:46:11 +0000  990 bytes for ./Payload/CapPow!.app/PrivacyInfo.xcprivacy
+2026-06-25 07:46:11 +0000  copying file ./Payload/CapPow!.app/Frameworks/libswift_Concurrency.dylib ... 
+2026-06-25 07:46:11 +0000  552560 bytes for ./Payload/CapPow!.app/Frameworks/libswift_Concurrency.dylib
+2026-06-25 07:46:11 +0000  copying file ./Payload/CapPow!.app/embedded.mobileprovision ... 
+2026-06-25 07:46:11 +0000  12237 bytes for ./Payload/CapPow!.app/embedded.mobileprovision
+2026-06-25 07:46:11 +0000  copying file ./Payload/CapPow!.app/Info.plist ... 
+2026-06-25 07:46:11 +0000  1780 bytes for ./Payload/CapPow!.app/Info.plist
+2026-06-25 07:46:11 +0000  copying file ./Payload/CapPow!.app/PkgInfo ... 
+2026-06-25 07:46:11 +0000  8 bytes for ./Payload/CapPow!.app/PkgInfo
+2026-06-25 07:46:11 +0000 [MT] /usr/bin/ditto exited with 0
+2026-06-25 07:46:11 +0000 [MT] Processing step: IDEDistributionAppStoreInformationStep
+2026-06-25 07:46:11 +0000 [MT] Skipping step: IDEDistributionAppStoreInformationStep because it said so
+2026-06-25 07:46:11 +0000 [MT] Processing step: IDEDistributionGenerateProcessedDistributionItems
+2026-06-25 07:46:11 +0000 [MT] IDEDistributionItem init <DVTFilePath:0x90fcadab0:'/var/folders/n2/s2_5zgmd4t56hxs4dlxj6x7c0000gn/T/XcodeDistPipeline.~~~hh9uVG/Root/Payload/CapPow!.app/Frameworks/libswift_Concurrency.dylib'>
+2026-06-25 07:46:11 +0000 [MT] [OPTIONAL] Can't have a profile, not a bundle at <DVTFilePath:0x90fcadab0:'/var/folders/n2/s2_5zgmd4t56hxs4dlxj6x7c0000gn/T/XcodeDistPipeline.~~~hh9uVG/Root/Payload/CapPow!.app/Frameworks/libswift_Concurrency.dylib'>
+2026-06-25 07:46:11 +0000 [MT] IDEDistributionItem init <DVTFilePath:0x9128b9380:'/var/folders/n2/s2_5zgmd4t56hxs4dlxj6x7c0000gn/T/XcodeDistPipeline.~~~hh9uVG/Root/Payload/CapPow!.app'>
+2026-06-25 07:46:11 +0000 [MT] Processing step: IDEDistributionCreateManifestStep

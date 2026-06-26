@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://chk6tbh4anjqe"]
+
+[ext_resource type="Script" uid="uid://cpb2pr86nws32" path="res://art/characters/player_capy.gd" id="1_fmtub"]
+[ext_resource type="Texture2D" uid="uid://dhivadh82vekv" path="res://art/characters/capybara_walk.png" id="1_iaj31"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sg7pw"]
+size = Vector2(84, 78)
+
+[sub_resource type="Animation" id="Animation_fmtub"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_xq1uh"]
+resource_name = "walk_right"
+length = 0.53333336
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ebuve"]
+_data = {
+&"RESET": SubResource("Animation_fmtub"),
+&"walk_right": SubResource("Animation_xq1uh")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fmtub"]
+animation = &"walk_right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xq1uh"]
+animation = &"walk_right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ebuve"]
+animation = &"walk_right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6phkj"]
+animation = &"walk_right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_hqoe5"]
+min_space = Vector2(-1, -1.1)
+max_space = Vector2(1, 1.1)
+blend_point_0/node = SubResource("AnimationNodeAnimation_fmtub")
+blend_point_0/pos = Vector2(1, 0)
+blend_point_0/name = &"walk_right"
+blend_point_1/node = SubResource("AnimationNodeAnimation_xq1uh")
+blend_point_1/pos = Vector2(0, 1.1)
+blend_point_1/name = &"walk_right 2"
+blend_point_2/node = SubResource("AnimationNodeAnimation_ebuve")
+blend_point_2/pos = Vector2(0, -1.1)
+blend_point_2/name = &"walk_right 3"
+blend_point_3/node = SubResource("AnimationNodeAnimation_6phkj")
+blend_point_3/pos = Vector2(-1, 0)
+blend_point_3/name = &"walk_right 4"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4i5gy"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_6phkj"]
+states/Start/position = Vector2(176.5, 100.25)
+states/Walk/node = SubResource("AnimationNodeBlendSpace2D_hqoe5")
+states/Walk/position = Vector2(330.5, 100.5)
+transitions = ["Start", "Walk", SubResource("AnimationNodeStateMachineTransition_4i5gy")]
+
+[node name="PlayerCapy" type="CharacterBody2D" unique_id=1764218114]
+position = Vector2(-1, -10)
+script = ExtResource("1_fmtub")
+player_id = null
+move_speed = null
+arena_radius = null
+growth_per_grass = null
+max_scale = null
+outside_scale = null
+transition_speed = null
+bounce_force = null
+
+[node name="CapybaraWalk" type="Sprite2D" parent="." unique_id=1502933329 groups=["capybara"]]
+position = Vector2(0.99999994, -0.99999994)
+rotation = 3.1642818
+scale = Vector2(0.4896143, 0.61721075)
+texture = ExtResource("1_iaj31")
+hframes = 2
+vframes = 2
+frame = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=729534183]
+position = Vector2(6, 0)
+shape = SubResource("RectangleShape2D_sg7pw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=177546030]
+libraries/ = SubResource("AnimationLibrary_ebuve")
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1887108464]
+tree_root = SubResource("AnimationNodeStateMachine_6phkj")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Walk/blend_position = Vector2(0, 0)
