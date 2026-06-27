@@ -1,0 +1,223 @@
+[gd_scene format=3 uid="uid://bx23h6s61oc77"]
+
+[ext_resource type="Script" uid="uid://b0ih7rxuxthty" path="res://scenes/winner/winner_panel.gd" id="1_2bth7"]
+[ext_resource type="Texture2D" uid="uid://cbywman2yd5gb" path="res://scenes/winner/winner_background.svg" id="1_m6nst"]
+[ext_resource type="Texture2D" uid="uid://cp6lfipf08db6" path="res://scenes/winner/winner_section_background.png" id="2_lx6mx"]
+[ext_resource type="FontFile" uid="uid://cfhjrgfmq6han" path="res://assets/fonts/Baloo-Regular.ttf" id="3_y5rj6"]
+[ext_resource type="Texture2D" uid="uid://b1x33npi22jmi" path="res://scenes/test/skull.png" id="4_2bth7"]
+[ext_resource type="Texture2D" uid="uid://c86c18soqnydy" path="res://scenes/winner/brown_button_background.png" id="5_nrl6x"]
+[ext_resource type="Texture2D" uid="uid://did3xy3x3hp3i" path="res://scenes/winner/home_vector.png" id="6_y4w3w"]
+[ext_resource type="FontFile" uid="uid://hsdjnqqby1qh" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="7_16oui"]
+[ext_resource type="Texture2D" uid="uid://tit6tlbfvtwq" path="res://scenes/winner/green_button_background.png" id="8_kly4t"]
+[ext_resource type="Texture2D" uid="uid://bmmrpnq1wusck" path="res://scenes/winner/replay_vector.png" id="9_el54m"]
+
+[node name="WinnerLayer" type="CanvasLayer" unique_id=255030181]
+layer = 10
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1035570605]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5882353)
+
+[node name="WinnerPanel" type="Panel" parent="." unique_id=838444009]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2bth7")
+
+[node name="WinnerContainer" type="CenterContainer" parent="WinnerPanel" unique_id=1264122779]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WinnerBackground" type="TextureRect" parent="WinnerPanel/WinnerContainer" unique_id=1836181161]
+custom_minimum_size = Vector2(358, 137)
+layout_mode = 2
+texture = ExtResource("1_m6nst")
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="WinnerPanel/WinnerContainer/WinnerBackground" unique_id=291758839]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -203.0
+offset_top = -252.5
+offset_right = 203.0
+offset_bottom = 252.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 150
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WinnerPanel/WinnerContainer/WinnerBackground/MarginContainer" unique_id=314677961]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="WinnerSectionBackground" type="TextureRect" parent="WinnerPanel/WinnerContainer/WinnerBackground/MarginContainer/VBoxContainer" unique_id=736885240]
+custom_minimum_size = Vector2(296, 143)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_lx6mx")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WinnerPanel/WinnerContainer/WinnerBackground/MarginContainer/VBoxContainer/WinnerSectionBackground" unique_id=1198101322]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -45.0
+offset_right = 64.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="LabelPlayer" type="Label" parent="WinnerPanel/WinnerContainer/WinnerBackground/MarginContainer/VBoxContainer/WinnerSectionBackground/VBoxContainer" unique_id=944621418]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 4)
+theme_override_colors/font_outline_color = Color(0.39215687, 0.2, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_y5rj6")
+theme_override_font_sizes/font_size = 30
+text = "PLAYER 1"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="WinnerPanel/WinnerContainer/WinnerBackground/MarginContainer/VBoxContainer/WinnerSectionBackground/VBoxContainer" unique_id=494528488]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 4)
+theme_override_constants/separation = 24
+
+[node name="KillsLabel" type="Label" parent="WinnerPanel/WinnerContainer/WinnerBackground/MarginContainer/VBoxContainer/WinnerSectionBackground/VBoxContainer/HBoxContainer" unique_id=409848087]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9764706, 0.7882353, 0.14509805, 1)
+theme_override_colors/font_outline_color = Color(0.39215687, 0.2, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_y5rj6")
+theme_override_font_sizes/font_size = 30
+text = "KILLS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="WinnerPanel/WinnerContainer/WinnerBackground/MarginContainer/VBoxContainer/WinnerSectionBackground/VBoxContainer/HBoxContainer" unique_id=597564917]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -4)
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="WinnerPanel/WinnerContainer/WinnerBackground/MarginContainer/VBoxContainer/WinnerSectionBackground/VBoxContainer/HBoxContainer/HBoxContainer" unique_id=2068754153]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+texture = ExtResource("4_2bth7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TotalKillLabel" type="Label" parent="WinnerPanel/WinnerContainer/WinnerBackground/MarginContainer/VBoxContainer/WinnerSectionBackground/VBoxContainer/HBoxContainer/HBoxContainer" unique_id=1972448120]
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_colors/font_outline_color = Color(0.39215687, 0.2, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_y5rj6")
+theme_override_font_sizes/font_size = 30
+text = "5"
+
+[node name="menu_button" type="TextureButton" parent="WinnerPanel/WinnerContainer/WinnerBackground/MarginContainer/VBoxContainer" unique_id=1946700541]
+custom_minimum_size = Vector2(406, 76)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_nrl6x")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="back_to_menu_section" type="HBoxContainer" parent="WinnerPanel/WinnerContainer/WinnerBackground/MarginContainer/VBoxContainer/menu_button" unique_id=737392424]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.5
+offset_top = -25.5
+offset_right = 89.5
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -4)
+theme_override_constants/separation = 8
+
+[node name="home_vector" type="TextureRect" parent="WinnerPanel/WinnerContainer/WinnerBackground/MarginContainer/VBoxContainer/menu_button/back_to_menu_section" unique_id=1393946128]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("6_y4w3w")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="WinnerPanel/WinnerContainer/WinnerBackground/MarginContainer/VBoxContainer/menu_button/back_to_menu_section" unique_id=131976299]
+layout_mode = 2
+size_flags_horizontal = 4
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 9)
+theme_override_colors/font_color = Color(0.36862746, 0.19215687, 0.03529412, 1)
+theme_override_fonts/font = ExtResource("7_16oui")
+theme_override_font_sizes/font_size = 50
+text = "Menu"
+
+[node name="play_again_button" type="TextureButton" parent="WinnerPanel/WinnerContainer/WinnerBackground/MarginContainer/VBoxContainer" unique_id=1509672124]
+custom_minimum_size = Vector2(406, 76)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_enabled = true
+texture_normal = ExtResource("8_kly4t")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="WinnerPanel/WinnerContainer/WinnerBackground/MarginContainer/VBoxContainer/play_again_button" unique_id=2055616184]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -4)
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="retry_vector" type="TextureRect" parent="WinnerPanel/WinnerContainer/WinnerBackground/MarginContainer/VBoxContainer/play_again_button/HBoxContainer" unique_id=35932450]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("9_el54m")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="WinnerPanel/WinnerContainer/WinnerBackground/MarginContainer/VBoxContainer/play_again_button/HBoxContainer" unique_id=1058908383]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 9)
+theme_override_colors/font_color = Color(0.18039216, 0.25490198, 0.015686275, 1)
+theme_override_fonts/font = ExtResource("7_16oui")
+theme_override_font_sizes/font_size = 50
+text = "Play Again"

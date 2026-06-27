@@ -16,7 +16,7 @@ extends CharacterBody2D
 var arena_center: Vector2
 var is_outside = false
 var is_bounced = false
-
+var last_attacker_id: int = -1  
 func _ready():
 	arena_center = get_parent().global_position
 	add_to_group("capybara")  # pastikan masuk group ini biar collision & grass detection jalan
@@ -64,11 +64,11 @@ func check_collision_with_others():
 			var applied_force = bounce_force * scale.x
 			
 			if collider.has_method("get_bounced"):
-				collider.get_bounced(bounce_direction, applied_force)
+				collider.get_bounced(bounce_direction, applied_force, player_id)  # <- kirim player_id "gue"
 				
-func get_bounced(direction: Vector2, force: float):
+func get_bounced(direction: Vector2, force: float, attacker_id: int = -1):
 	is_bounced = true
-	# Gunakan force yang dikirim dari si penabrak
+	last_attacker_id = attacker_id  # <- catat siapa yang baru nabrak
 	velocity = direction * force
 	await get_tree().create_timer(0.3).timeout
 	is_bounced = false
@@ -97,26 +97,33 @@ func update_animation_parameters(movie_input: Vector2):
 		state_machine.travel("Idle")
 
 func check_arena_boundary():
+	if is_outside:
+		return  # udah dalam proses respawn, skip biar gak ke-trigger dobel
+		
 	var distance_from_center = global_position.distance_to(arena_center)
-	var currently_outside = distance_from_center > arena_radius
 	
-	if currently_outside:
-		var direction_to_center = (global_position - arena_center).normalized()
-		global_position = arena_center + direction_to_center * arena_radius
-	
-	if currently_outside and not is_outside:
+	if distance_from_center > arena_radius:
 		is_outside = true
 		on_exit_arena()
-	elif not currently_outside and is_outside:
-		is_outside = false
-		on_enter_arena()
 
 func on_exit_arena():
-	print(name, " keluar arena!")
-	var tween = create_tween()
-	tween.tween_property(self, "scale", Vector2.ONE * outside_scale, transition_speed)
+	var game_scene = get_tree().get_first_node_in_group("game_scene")
+	if game_scene and game_scene.has_method("on_player_killed"):
+		if last_attacker_id != -1:
+			game_scene.on_player_killed(last_attacker_id)
 
-func on_enter_arena():
-	print(name, " masuk arena lagi!")
-	var tween = create_tween()
-	tween.tween_property(self, "scale", Vector2.ONE, transition_speed)
+	last_attacker_id = -1
+	
+	visible = false
+	set_physics_process(false)
+	
+	await get_tree().create_timer(1.0).timeout  # delay respawn 1 detik
+	
+	respawn()
+	
+func respawn():
+	global_position = arena_center
+	scale = Vector2.ONE
+	visible = true
+	is_outside = false
+	set_physics_process(true)

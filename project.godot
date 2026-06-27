@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="CapPow!"
-run/main_scene="uid://dqkho33ln85sb"
+run/main_scene="uid://2is66mwx8f7v"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*uid://b3o6rohibg0g5"
 
 [display]
 
