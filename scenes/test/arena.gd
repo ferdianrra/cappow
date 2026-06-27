@@ -12,6 +12,7 @@ func _ready():
 	timer.wait_time = spawn_interval
 	timer.timeout.connect(_try_spawn_grass)
 	add_child(timer)
+	add_to_group("game_scene")
 	timer.start()
 	
 	# Spawn awal beberapa rumput langsung pas game mulai

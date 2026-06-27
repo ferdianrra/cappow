@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://povxjya1n2ko"]
+
+[ext_resource type="Texture2D" uid="uid://do1pka74a7dfe" path="res://scenes/character_select/people_card.png" id="1_u70t0"]
+[ext_resource type="Texture2D" uid="uid://bvytyva6ty67m" path="res://scenes/character_select/people_vector.png" id="2_8v52j"]
+[ext_resource type="Script" uid="uid://b6vop17pqgpg5" path="res://scenes/character_select/player_card.gd" id="2_wrmlt"]
+[ext_resource type="FontFile" uid="uid://hsdjnqqby1qh" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="3_wrmlt"]
+
+[node name="people_player_button" type="TextureButton" unique_id=1645039051]
+custom_minimum_size = Vector2(172, 0)
+texture_normal = ExtResource("1_u70t0")
+texture_pressed = ExtResource("1_u70t0")
+texture_hover = ExtResource("1_u70t0")
+texture_disabled = ExtResource("1_u70t0")
+texture_focused = ExtResource("1_u70t0")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("2_wrmlt")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1216450920]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 34
+theme_override_constants/margin_top = 34
+theme_override_constants/margin_right = 34
+theme_override_constants/margin_bottom = 34
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1359400625]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=2018888339]
+layout_mode = 2
+texture = ExtResource("2_8v52j")
+expand_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=627213585]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.36862746, 0.19215687, 0.03529412, 1)
+theme_override_fonts/font = ExtResource("3_wrmlt")
+theme_override_font_sizes/font_size = 40
+text = "1P"
+horizontal_alignment = 1
+vertical_alignment = 1

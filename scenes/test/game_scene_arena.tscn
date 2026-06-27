@@ -1,0 +1,472 @@
+[gd_scene format=3 uid="uid://dqkho33ln85sb"]
+
+[ext_resource type="Script" uid="uid://cisxl65y7mo44" path="res://scenes/test/game_scene_arena.gd" id="1_nn5h6"]
+[ext_resource type="Texture2D" uid="uid://boe25bb7atvwb" path="res://scenes/test/arena_bakcground.png" id="2_qecvs"]
+[ext_resource type="Texture2D" uid="uid://bp07t0g60d5i5" path="res://art/tilesets/arena.png" id="3_qecvs"]
+[ext_resource type="Script" uid="uid://bhsdktdtoth0n" path="res://scenes/test/arena.gd" id="4_r4538"]
+[ext_resource type="PackedScene" uid="uid://dwv51gkca88kq" path="res://scenes/test/grass.tscn" id="5_s5oc3"]
+[ext_resource type="PackedScene" uid="uid://chk6tbh4anjqe" path="res://art/characters/player_capy.tscn" id="6_lslp7"]
+[ext_resource type="PackedScene" uid="uid://pfg4mtqvjqe8" path="res://joystick.tscn" id="7_hv4ls"]
+[ext_resource type="FontFile" uid="uid://hsdjnqqby1qh" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="8_4nuo1"]
+[ext_resource type="Texture2D" uid="uid://b1x33npi22jmi" path="res://scenes/test/skull.png" id="9_qecvs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qecvs"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.972549, 0.89411765, 0.4509804, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5oc3"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.7411765, 0.56078434, 0.011764706, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.972549, 0.89411765, 0.4509804, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_q8jvn"]
+line_spacing = 0.0
+font_size = 36
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r4538"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.14117648, 0.29411766, 0.47843137, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.03529412, 0.5294118, 0.9490196, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_58km3"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.8901961, 0.039215688, 0.019607844, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lslp7"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.67058825, 0.16078432, 0.003921569, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.92941177, 0.21176471, 0.023529412, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hv4ls"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.27450982, 0.42745098, 0.02745098, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.38039216, 0.8039216, 0.13725491, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ncxn"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.38039216, 0.8039216, 0.13725491, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 20
+
+[node name="GameSceneArena" type="Node2D" unique_id=311747993]
+position = Vector2(-9, 12)
+script = ExtResource("1_nn5h6")
+
+[node name="OutsideArena" type="Sprite2D" parent="." unique_id=389830449]
+position = Vector2(587, 331)
+scale = Vector2(0.94793385, 0.8737658)
+texture = ExtResource("2_qecvs")
+
+[node name="Arena" type="Sprite2D" parent="." unique_id=1936357486]
+position = Vector2(579.00006, 341)
+scale = Vector2(0.47602656, 0.4593799)
+texture = ExtResource("3_qecvs")
+script = ExtResource("4_r4538")
+grass_scene = ExtResource("5_s5oc3")
+
+[node name="PlayerCapy2" parent="Arena" unique_id=987455586 node_paths=PackedStringArray("joystick_node") groups=["capybara"] instance=ExtResource("6_lslp7")]
+position = Vector2(-176.09457, 108.93963)
+rotation = 0.007201472
+scale = Vector2(0.7, 0.742)
+player_id = 2
+move_speed = 300.0
+arena_radius = 280.0
+growth_per_grass = 0.15
+max_scale = 3.0
+outside_scale = 0.4
+transition_speed = 0.25
+bounce_force = 400.0
+joystick_node = NodePath("../../CanvasLayer/ZoneTopRight/VBoxContainer/Joystick2")
+
+[node name="PlayerCapy3" parent="Arena" unique_id=1764218114 node_paths=PackedStringArray("joystick_node") groups=["capybara"] instance=ExtResource("6_lslp7")]
+position = Vector2(-206.6416, -149.07529)
+rotation = 0.007201472
+scale = Vector2(0.7, 0.742)
+player_id = 3
+move_speed = 300.0
+arena_radius = 280.0
+growth_per_grass = 0.15
+max_scale = 3.0
+outside_scale = 0.4
+transition_speed = 0.25
+bounce_force = 400.0
+joystick_node = NodePath("../../CanvasLayer/ZoneBottomRight/VBoxContainer/Joystick3")
+
+[node name="PlayerCapy4" parent="Arena" unique_id=725495268 node_paths=PackedStringArray("joystick_node") groups=["capybara"] instance=ExtResource("6_lslp7")]
+position = Vector2(102.42241, -170.09872)
+rotation = 0.007201472
+scale = Vector2(0.7, 0.742)
+player_id = 4
+move_speed = 300.0
+arena_radius = 280.0
+growth_per_grass = 0.15
+max_scale = 3.0
+outside_scale = 0.4
+transition_speed = 0.25
+bounce_force = 400.0
+joystick_node = NodePath("../../CanvasLayer/ZoneTopLeft/VBoxContainer/Joystick4")
+
+[node name="PlayerCapy1" parent="Arena" unique_id=1179526682 node_paths=PackedStringArray("joystick_node") groups=["capybara"] instance=ExtResource("6_lslp7")]
+position = Vector2(132.96942, 95.56108)
+rotation = 0.007201472
+scale = Vector2(0.7, 0.742)
+player_id = 1
+move_speed = 300.0
+arena_radius = 280.0
+growth_per_grass = 0.15
+max_scale = 3.0
+outside_scale = 0.4
+transition_speed = 0.25
+bounce_force = 400.0
+joystick_node = NodePath("../../CanvasLayer/ZoneBottomLeft/VBoxContainer/Joystick")
+
+[node name="Grass" parent="Arena" unique_id=13430623 instance=ExtResource("5_s5oc3")]
+position = Vector2(113.20367, 212.14555)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1045075174]
+
+[node name="TimerLabel" type="Label" parent="CanvasLayer" unique_id=1316937517]
+offset_left = 545.0
+offset_top = 49.0
+offset_right = 628.0
+offset_bottom = 114.0
+theme_override_colors/font_color = Color(0.36862746, 0.19215687, 0.03529412, 1)
+theme_override_fonts/font = ExtResource("8_4nuo1")
+theme_override_font_sizes/font_size = 30
+text = "00:00
+"
+horizontal_alignment = 1
+
+[node name="Scoreboard" type="HBoxContainer" parent="CanvasLayer" unique_id=1415670450]
+offset_left = 372.0
+offset_top = 68.0
+offset_right = 692.0
+offset_bottom = 108.0
+theme_override_constants/separation = 20
+
+[node name="ZoneBottomLeft" type="MarginContainer" parent="CanvasLayer" unique_id=1215493071]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -200.0
+offset_right = 92.0
+grow_vertical = 0
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ZoneBottomLeft" unique_id=883431654]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 20
+
+[node name="Joystick" parent="CanvasLayer/ZoneBottomLeft/VBoxContainer" unique_id=371172085 groups=["capybara"] instance=ExtResource("7_hv4ls")]
+layout_mode = 2
+
+[node name="Point" parent="CanvasLayer/ZoneBottomLeft/VBoxContainer/Joystick" index="1" unique_id=1189998816]
+theme_override_styles/panel = SubResource("StyleBoxFlat_qecvs")
+
+[node name="ScoreBg_1P" type="Panel" parent="CanvasLayer/ZoneBottomLeft/VBoxContainer" unique_id=873887312]
+custom_minimum_size = Vector2(120, 70)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_s5oc3")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/ZoneBottomLeft/VBoxContainer/ScoreBg_1P" unique_id=1066325423]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/ZoneBottomLeft/VBoxContainer/ScoreBg_1P/MarginContainer" unique_id=1135715152]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="SkullIcon" type="TextureRect" parent="CanvasLayer/ZoneBottomLeft/VBoxContainer/ScoreBg_1P/MarginContainer/HBoxContainer" unique_id=1424604805]
+layout_mode = 2
+texture = ExtResource("9_qecvs")
+expand_mode = 3
+
+[node name="Score1P" type="Label" parent="CanvasLayer/ZoneBottomLeft/VBoxContainer/ScoreBg_1P/MarginContainer/HBoxContainer" unique_id=771861854]
+layout_mode = 2
+size_flags_horizontal = 4
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 4)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_4nuo1")
+theme_override_font_sizes/font_size = 16
+text = "0"
+label_settings = SubResource("LabelSettings_q8jvn")
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 3
+
+[node name="ZoneTopLeft" type="MarginContainer" parent="CanvasLayer" unique_id=2010746007]
+offset_right = 160.0
+offset_bottom = 210.0
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ZoneTopLeft" unique_id=2129290944]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 20
+
+[node name="ScoreBg_4P" type="Panel" parent="CanvasLayer/ZoneTopLeft/VBoxContainer" unique_id=767419854]
+custom_minimum_size = Vector2(120, 70)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_r4538")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/ZoneTopLeft/VBoxContainer/ScoreBg_4P" unique_id=468570399]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/ZoneTopLeft/VBoxContainer/ScoreBg_4P/MarginContainer" unique_id=2033247206]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="SkullIcon" type="TextureRect" parent="CanvasLayer/ZoneTopLeft/VBoxContainer/ScoreBg_4P/MarginContainer/HBoxContainer" unique_id=1779639845]
+layout_mode = 2
+texture = ExtResource("9_qecvs")
+expand_mode = 3
+
+[node name="Score4P" type="Label" parent="CanvasLayer/ZoneTopLeft/VBoxContainer/ScoreBg_4P/MarginContainer/HBoxContainer" unique_id=1102104310]
+layout_mode = 2
+size_flags_horizontal = 4
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 4)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_4nuo1")
+theme_override_font_sizes/font_size = 16
+text = "0"
+label_settings = SubResource("LabelSettings_q8jvn")
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 3
+
+[node name="Joystick4" parent="CanvasLayer/ZoneTopLeft/VBoxContainer" unique_id=2100688239 groups=["capybara"] instance=ExtResource("7_hv4ls")]
+layout_mode = 2
+
+[node name="ZoneBottomRight" type="MarginContainer" parent="CanvasLayer" unique_id=149924851]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -210.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ZoneBottomRight" unique_id=58712745]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 20
+
+[node name="Joystick3" parent="CanvasLayer/ZoneBottomRight/VBoxContainer" unique_id=1813404019 groups=["capybara"] instance=ExtResource("7_hv4ls")]
+self_modulate = Color(0.8901961, 0.039215688, 0.019607844, 1)
+layout_mode = 2
+
+[node name="Point" parent="CanvasLayer/ZoneBottomRight/VBoxContainer/Joystick3" index="1" unique_id=1189998816]
+theme_override_styles/panel = SubResource("StyleBoxFlat_58km3")
+
+[node name="ScoreBg_3P" type="Panel" parent="CanvasLayer/ZoneBottomRight/VBoxContainer" unique_id=633719779]
+custom_minimum_size = Vector2(120, 70)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_lslp7")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/ZoneBottomRight/VBoxContainer/ScoreBg_3P" unique_id=1927256418]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/ZoneBottomRight/VBoxContainer/ScoreBg_3P/MarginContainer" unique_id=1852022870]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="SkullIcon" type="TextureRect" parent="CanvasLayer/ZoneBottomRight/VBoxContainer/ScoreBg_3P/MarginContainer/HBoxContainer" unique_id=495519005]
+layout_mode = 2
+texture = ExtResource("9_qecvs")
+expand_mode = 3
+
+[node name="Score3P" type="Label" parent="CanvasLayer/ZoneBottomRight/VBoxContainer/ScoreBg_3P/MarginContainer/HBoxContainer" unique_id=1627447290]
+layout_mode = 2
+size_flags_horizontal = 4
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 4)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_4nuo1")
+theme_override_font_sizes/font_size = 16
+text = "0"
+label_settings = SubResource("LabelSettings_q8jvn")
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 3
+
+[node name="ZoneTopRight" type="MarginContainer" parent="CanvasLayer" unique_id=1902425582]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -160.0
+offset_bottom = 210.0
+grow_horizontal = 0
+theme_override_constants/margin_right = 40
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ZoneTopRight" unique_id=2029205829]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 20
+
+[node name="ScoreBg_2P" type="Panel" parent="CanvasLayer/ZoneTopRight/VBoxContainer" unique_id=2053968361]
+custom_minimum_size = Vector2(120, 70)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_hv4ls")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/ZoneTopRight/VBoxContainer/ScoreBg_2P" unique_id=1167171545]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/ZoneTopRight/VBoxContainer/ScoreBg_2P/MarginContainer" unique_id=150948802]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="SkullIcon" type="TextureRect" parent="CanvasLayer/ZoneTopRight/VBoxContainer/ScoreBg_2P/MarginContainer/HBoxContainer" unique_id=1532912892]
+layout_mode = 2
+texture = ExtResource("9_qecvs")
+expand_mode = 3
+
+[node name="Score2P" type="Label" parent="CanvasLayer/ZoneTopRight/VBoxContainer/ScoreBg_2P/MarginContainer/HBoxContainer" unique_id=589061247]
+layout_mode = 2
+size_flags_horizontal = 4
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 4)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_4nuo1")
+theme_override_font_sizes/font_size = 16
+text = "0"
+label_settings = SubResource("LabelSettings_q8jvn")
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 3
+
+[node name="Joystick2" parent="CanvasLayer/ZoneTopRight/VBoxContainer" unique_id=1128453643 groups=["capybara"] instance=ExtResource("7_hv4ls")]
+layout_mode = 2
+
+[node name="Point" parent="CanvasLayer/ZoneTopRight/VBoxContainer/Joystick2" index="1" unique_id=1189998816]
+theme_override_styles/panel = SubResource("StyleBoxFlat_0ncxn")
+
+[node name="GameTimer" type="Timer" parent="." unique_id=1049391285]
+wait_time = 60.0
+one_shot = true
+autostart = true
+
+[editable path="CanvasLayer/ZoneBottomLeft/VBoxContainer/Joystick"]
+[editable path="CanvasLayer/ZoneBottomRight/VBoxContainer/Joystick3"]
+[editable path="CanvasLayer/ZoneTopRight/VBoxContainer/Joystick2"]
