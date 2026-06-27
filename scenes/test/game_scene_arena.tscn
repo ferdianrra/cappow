@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dqkho33ln85sb"]
+[gd_scene format=3 uid="uid://byh4se2fct8o"]
 
 [ext_resource type="Script" uid="uid://cisxl65y7mo44" path="res://scenes/test/game_scene_arena.gd" id="1_nn5h6"]
 [ext_resource type="Texture2D" uid="uid://boe25bb7atvwb" path="res://scenes/test/arena_bakcground.png" id="2_qecvs"]

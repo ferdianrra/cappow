@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ln12eauuyjbu"]
 
 [ext_resource type="Script" uid="uid://8jfcuwgb81c" path="res://character_body_2d.gd" id="1_weylh"]
+[ext_resource type="SpriteFrames" uid="uid://cgvrrj8efrl8k" path="res://assets/sprite_frames/capybara.tres" id="2_0p7rj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wfd04"]
 radius = 64.00781
@@ -15,4 +16,5 @@ shape = SubResource("CircleShape2D_wfd04")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=255663112]
 rotation = 4.712389
 scale = Vector2(0.5, 0.5)
-animation = &"punch"
+sprite_frames = ExtResource("2_0p7rj")
+animation = &"idle"
