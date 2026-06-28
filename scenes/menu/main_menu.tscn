@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://h781bs6o8nv" path="res://art/logo/cappow_logo.png" id="2_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://c86c18soqnydy" path="res://scenes/winner/brown_button_background.png" id="3_rtw2f"]
 [ext_resource type="Texture2D" uid="uid://crc5n7xgy07t5" path="res://scenes/menu/play_vector.png" id="4_oa1go"]
+[ext_resource type="Script" uid="uid://bpmgaou1av36u" path="res://scenes/menu/button_behavior.gd" id="5_qgo02"]
 [ext_resource type="FontFile" uid="uid://hsdjnqqby1qh" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="5_tbmy8"]
 [ext_resource type="Texture2D" uid="uid://com4j7m5g2dai" path="res://scenes/menu/guide_vector.png" id="6_jk1qb"]
 
@@ -57,6 +58,7 @@ layout_mode = 2
 texture_normal = ExtResource("3_rtw2f")
 ignore_texture_size = true
 stretch_mode = 5
+script = ExtResource("5_qgo02")
 
 [node name="PlayButtonSection" type="HBoxContainer" parent="VBoxContainer/PlayButton" unique_id=1941207850]
 layout_mode = 1
@@ -100,6 +102,7 @@ size_flags_horizontal = 4
 texture_normal = ExtResource("3_rtw2f")
 ignore_texture_size = true
 stretch_mode = 6
+script = ExtResource("5_qgo02")
 
 [node name="GuideButtonSection" type="HBoxContainer" parent="VBoxContainer/GuideButton" unique_id=1996892521]
 layout_mode = 1
@@ -136,4 +139,7 @@ theme_override_fonts/font = ExtResource("5_tbmy8")
 theme_override_font_sizes/font_size = 50
 text = "How To Play"
 
-[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="button_down" from="VBoxContainer/PlayButton" to="VBoxContainer/PlayButton" method="_on_button_down"]
+[connection signal="button_up" from="VBoxContainer/PlayButton" to="VBoxContainer/PlayButton" method="_on_button_up"]
+[connection signal="button_down" from="VBoxContainer/GuideButton" to="VBoxContainer/GuideButton" method="_on_button_down"]
+[connection signal="button_up" from="VBoxContainer/GuideButton" to="VBoxContainer/GuideButton" method="_on_button_up"]

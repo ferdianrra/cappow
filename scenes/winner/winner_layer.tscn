@@ -15,13 +15,14 @@
 layer = 10
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1035570605]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
+size_flags_horizontal = 3
+size_flags_vertical = 3
 color = Color(0, 0, 0, 0.5882353)
 
 [node name="WinnerPanel" type="Panel" parent="." unique_id=838444009]
@@ -30,7 +31,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
 size_flags_vertical = 3
 script = ExtResource("1_2bth7")
 
@@ -225,3 +226,6 @@ theme_override_colors/font_color = Color(0.18039216, 0.25490198, 0.015686275, 1)
 theme_override_fonts/font = ExtResource("7_16oui")
 theme_override_font_sizes/font_size = 50
 text = "Play Again"
+
+[connection signal="pressed" from="WinnerPanel/WinnerContainer/WinnerBackground/MarginContainer/VBoxContainer/menu_button" to="WinnerPanel" method="_on_menu_button_pressed"]
+[connection signal="pressed" from="WinnerPanel/WinnerContainer/WinnerBackground/MarginContainer/VBoxContainer/play_again_button" to="WinnerPanel" method="_on_play_again_button_pressed"]

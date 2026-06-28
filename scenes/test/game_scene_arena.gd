@@ -1,7 +1,5 @@
 extends Node2D
 
-# "Tangkap" node UI dan Timer-nya
-# Pastikan path-nya sesuai dengan susunan di Scene Tree-mu
 @onready var timer_label = $CanvasLayer/TimerLabel
 @onready var game_timer = $GameTimer
 @onready var score_1p = $CanvasLayer/ZoneBottomLeft/VBoxContainer/ScoreBg_1P/MarginContainer/HBoxContainer/Score1P
@@ -9,7 +7,6 @@ extends Node2D
 @onready var score_3p = $CanvasLayer/ZoneBottomRight/VBoxContainer/ScoreBg_3P/MarginContainer/HBoxContainer/Score3P
 @onready var score_4p = $CanvasLayer/ZoneTopLeft/VBoxContainer/ScoreBg_4P/MarginContainer/HBoxContainer/Score4P
 
-# Menyimpan jumlah mati tiap player (awalnya 0 semua)
 var death_counts = {
 	1: 0,
 	2: 0,

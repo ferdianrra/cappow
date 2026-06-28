@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://cbyrrrr2mht8s" path="res://scenes/character_select/character_select_menu.gd" id="1_gfeik"]
 [ext_resource type="FontFile" uid="uid://hsdjnqqby1qh" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="2_gfeik"]
 [ext_resource type="PackedScene" uid="uid://povxjya1n2ko" path="res://scenes/character_select/player_card.tscn" id="4_sjomi"]
+[ext_resource type="Texture2D" uid="uid://cvx3bau48dhhy" path="res://scenes/guide_game/back_button.png" id="5_lu0c1"]
+[ext_resource type="Script" uid="uid://bpmgaou1av36u" path="res://scenes/menu/button_behavior.gd" id="6_dqp8n"]
 
 [node name="CharacterSelectMenu" type="Control" unique_id=431653541]
 layout_mode = 3
@@ -57,7 +59,6 @@ theme_override_constants/separation = 50
 
 [node name="people_player_button" parent="VBoxContainer/select_player_section" unique_id=1645039051 instance=ExtResource("4_sjomi")]
 layout_mode = 2
-script = null
 
 [node name="people_player_button2" parent="VBoxContainer/select_player_section" unique_id=925909514 instance=ExtResource("4_sjomi")]
 layout_mode = 2
@@ -71,7 +72,30 @@ player_text = "3P"
 layout_mode = 2
 player_text = "4P"
 
-[connection signal="pressed" from="VBoxContainer/select_player_section/people_player_button" to="." method="_on_people_player_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/select_player_section/people_player_button2" to="." method="_on_people_player_button_2_pressed"]
-[connection signal="pressed" from="VBoxContainer/select_player_section/people_player_button3" to="." method="_on_people_player_button_3_pressed"]
-[connection signal="pressed" from="VBoxContainer/select_player_section/people_player_button4" to="." method="_on_people_player_button_4_pressed"]
+[node name="Control" type="Control" parent="." unique_id=1722538705]
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 60.0
+offset_bottom = 60.0
+
+[node name="BackButton" type="TextureButton" parent="Control" unique_id=1919270206]
+custom_minimum_size = Vector2(78.5, 69)
+layout_mode = 0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = ExtResource("5_lu0c1")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("6_dqp8n")
+
+[connection signal="button_down" from="VBoxContainer/select_player_section/people_player_button" to="VBoxContainer/select_player_section/people_player_button" method="_on_button_down"]
+[connection signal="button_up" from="VBoxContainer/select_player_section/people_player_button" to="VBoxContainer/select_player_section/people_player_button" method="_on_button_up"]
+[connection signal="button_down" from="VBoxContainer/select_player_section/people_player_button2" to="VBoxContainer/select_player_section/people_player_button2" method="_on_button_down"]
+[connection signal="button_up" from="VBoxContainer/select_player_section/people_player_button2" to="VBoxContainer/select_player_section/people_player_button2" method="_on_button_up"]
+[connection signal="button_down" from="VBoxContainer/select_player_section/people_player_button3" to="VBoxContainer/select_player_section/people_player_button3" method="_on_button_down"]
+[connection signal="button_up" from="VBoxContainer/select_player_section/people_player_button3" to="VBoxContainer/select_player_section/people_player_button3" method="_on_button_up"]
+[connection signal="button_down" from="VBoxContainer/select_player_section/people_player_button4" to="VBoxContainer/select_player_section/people_player_button4" method="_on_button_down"]
+[connection signal="button_up" from="VBoxContainer/select_player_section/people_player_button4" to="VBoxContainer/select_player_section/people_player_button4" method="_on_button_up"]
+[connection signal="button_down" from="Control/BackButton" to="Control/BackButton" method="_on_button_down"]
+[connection signal="button_up" from="Control/BackButton" to="Control/BackButton" method="_on_button_up"]

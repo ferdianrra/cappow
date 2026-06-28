@@ -13,7 +13,10 @@ config_version=5
 config/name="CapPow!"
 run/main_scene="uid://b2jxcugtdiuo2"
 config/features=PackedStringArray("4.7", "Mobile")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(1, 0.54901963, 0, 1)
+boot_splash/image="uid://h781bs6o8nv"
+config/icon="uid://cc3873c0bdxdc"
+boot_splash/minimum_display_time=1000
 
 [autoload]
 
