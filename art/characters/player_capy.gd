@@ -25,6 +25,8 @@ var is_bounced = false
 var is_punching = false
 var is_respawning = false 
 var last_attacker_id: int = -1   
+var original_collision_layer: int = 0
+var original_collision_mask: int = 0
 
 func _ready():
 	arena_center = get_parent().global_position
@@ -150,32 +152,37 @@ func respawn():
 	for t in active_tweens:
 		if t.is_valid():
 			t.kill()
+
 	var max_random_radius = arena_radius * 0.7
 	var random_distance = randf_range(0.0, max_random_radius)
 	var random_angle = randf_range(0.0, 2.0 * PI)
 	var random_offset = Vector2(cos(random_angle), sin(random_angle)) * random_distance
+	
 	global_position = arena_center + random_offset
 	scale = Vector2(0.5, 0.5) 
 	
 	visible = true
 	is_outside = false
-	set_physics_process(true)
-	is_respawning = true
 	
-	var original_layer = collision_layer
-	var original_mask = collision_mask
-	
+	original_collision_layer = collision_layer
+	original_collision_mask = collision_mask
 	collision_layer = 0 
 	collision_mask = 0  
 	
+	set_physics_process(true)
+	is_respawning = true
+	
+	var blink_duration = 0.125 * 2 * 8  # 8 loop x (fade out + fade in)
 	var tween = create_tween().set_loops(8) 
 	tween.tween_property(animated_sprite, "modulate:a", 0.2, 0.125) 
 	tween.tween_property(animated_sprite, "modulate:a", 1.0, 0.125) 
 	
-	await tween.finished
+	# Restore dijadwalkan lewat timer terpisah, BUKAN await tween yang bisa dibunuh
+	await get_tree().create_timer(blink_duration).timeout
 
-	collision_layer = original_layer
-	collision_mask = original_mask
+	collision_layer = original_collision_layer
+	collision_mask = original_collision_mask
+	force_update_transform()
 
 	animated_sprite.modulate.a = 1.0
 	is_respawning = false
