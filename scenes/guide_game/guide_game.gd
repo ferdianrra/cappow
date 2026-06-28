@@ -35,7 +35,6 @@ func  _on_action_button_completed() -> void:
 	if current_page == 0:
 		current_page = 1
 		var tween = create_tween().set_trans(Tween.TRANS_CUBIC)
-		# Menggeser seluruh wadah besar agar Page 2 masuk ke layar
 		tween.tween_property(slides_manager, "position:x", -1152, 0.5) 
 		update_ui()
 	else:

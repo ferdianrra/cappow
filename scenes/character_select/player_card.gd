@@ -5,7 +5,6 @@ extends TextureButton
 signal click_finished
 
 func _ready():
-	# Saat game dijalankan, ganti tulisan di Label sesuai dengan inputan player_text di Inspector
 	if label_node:
 		label_node.text = player_text
 	
