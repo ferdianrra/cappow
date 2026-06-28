@@ -19,3 +19,5 @@ animation = &"walk"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=729534183]
 position = Vector2(6, 0)
 shape = SubResource("RectangleShape2D_sg7pw")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1137665620]

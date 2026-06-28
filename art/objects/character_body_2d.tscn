@@ -17,5 +17,4 @@ shape = SubResource("CircleShape2D_wfd04")
 rotation = 4.712389
 scale = Vector2(0.5, 0.5)
 sprite_frames = ExtResource("2_0p7rj")
-animation = &"idle"
-frame_progress = 0.8865022
+animation = &"punch"

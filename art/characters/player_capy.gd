@@ -11,11 +11,15 @@ extends CharacterBody2D
 @export var joystick_node: Control
 
 const PLAYER_FRAMES = {
-	1: preload("res://art/characters/capy_basic.tres"),  # P1 - Cokelat
+	1: preload("res://art/characters/capy_yellow.tres"),  # P1 - Cokelat
 	2: preload("res://art/characters/capy_green.tres"),  # P2 - Hijau
 	3: preload("res://art/characters/capy_red.tres"),    # P3 - Merah
-	4: preload("res://art/characters/capy_yellow.tres")   # P4 - Kuning
+	4: preload("res://art/characters/capy_basic.tres")   # P4 - Kuning
 }
+
+# Preload the POW effect scene we made in Step 1
+const POW_EFFECT_SCENE = preload("res://scenes/effects/punch_effect.tscn")
+
 
 @onready var animated_sprite = $CapybaraWalk
 
@@ -78,8 +82,14 @@ func check_collision_with_others():
 
 			trigger_punch()
 			
+			# --- SPAWN THE EFFECT HERE ---
+			# collision.get_position() gives us the EXACT pixel point where they bumped heads!
+			spawn_pow_effect(collision.get_position())
+			
 			if collider.has_method("get_bounced"):
 				collider.get_bounced(bounce_direction, applied_force, player_id) 
+			
+			break
 				
 func get_bounced(direction: Vector2, force: float, attacker_id: int = -1):
 	if is_respawning:
@@ -186,3 +196,21 @@ func respawn():
 
 	animated_sprite.modulate.a = 1.0
 	is_respawning = false
+	
+	
+#func _on_hitbox_area_entered(hurtbox: Area2D) -> void:
+	## 1. Verify we actually hit an enemy/hittable object
+	#if hurtbox.is_in_group("enemies"):
+		#spawn_pow_effect(hurtbox.global_position)
+
+func spawn_pow_effect(hit_position: Vector2) -> void:
+	for active_effect in get_tree().get_nodes_in_group("pow_effects"):
+		if active_effect.global_position.distance_to(hit_position) < 20.0:
+			return
+
+	var effect = POW_EFFECT_SCENE.instantiate()
+	effect.add_to_group("pow_effects")
+	get_parent().add_child(effect)
+	effect.global_position = hit_position
+	effect.z_index = 100
+	effect.scale = Vector2(abs(scale.x)*2, abs(scale.y)*2)  # ← ADD THIS
