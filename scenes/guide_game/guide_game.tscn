@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://bje781xwr71dw"]
+
+[ext_resource type="Texture2D" uid="uid://coco7jb02p5yh" path="res://scenes/character_select/character_select_background.png" id="1_8ucmb"]
+[ext_resource type="Texture2D" uid="uid://cvx3bau48dhhy" path="res://scenes/guide_game/back_button.png" id="2_3ixq3"]
+[ext_resource type="FontFile" uid="uid://hsdjnqqby1qh" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="3_m1vrp"]
+[ext_resource type="Texture2D" uid="uid://ble1iwpycoajg" path="res://scenes/guide_game/Guide_1.png" id="4_ranvt"]
+
+[node name="GuideGame" type="Control" unique_id=1292346258]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 59.0
+offset_bottom = 189.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=579311709]
+layout_mode = 1
+offset_right = 1210.0
+offset_bottom = 834.0
+texture = ExtResource("1_8ucmb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=502057238]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackButton" type="TextureButton" parent="VBoxContainer" unique_id=426920255]
+custom_minimum_size = Vector2(78.5, 69)
+layout_mode = 2
+size_flags_horizontal = 0
+texture_normal = ExtResource("2_3ixq3")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="label_title" type="Label" parent="VBoxContainer" unique_id=1497109995]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.36862746, 0.19215687, 0.03529412, 1)
+theme_override_fonts/font = ExtResource("3_m1vrp")
+theme_override_font_sizes/font_size = 44
+text = "How To Play"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer" unique_id=1403149637]
+custom_minimum_size = Vector2(40, 350)
+layout_mode = 2
+texture = ExtResource("4_ranvt")
+expand_mode = 1
+stretch_mode = 5

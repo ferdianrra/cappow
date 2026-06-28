@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="CapPow!"
-run/main_scene="uid://2is66mwx8f7v"
+run/main_scene="uid://b2jxcugtdiuo2"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
@@ -21,7 +21,9 @@ Global="*uid://b3o6rohibg0g5"
 
 [display]
 
+window/size/borderless=true
 window/stretch/mode="viewport"
+window/stretch/aspect="keep_width"
 display_server/android/enable_pan_and_scale_gestures=false
 
 [input]

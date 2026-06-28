@@ -20,6 +20,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
 color = Color(0, 0, 0, 0.5882353)
 
 [node name="WinnerPanel" type="Panel" parent="." unique_id=838444009]
@@ -28,6 +30,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_2bth7")
 
 [node name="WinnerContainer" type="CenterContainer" parent="WinnerPanel" unique_id=1264122779]

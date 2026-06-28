@@ -17,31 +17,22 @@ var death_counts = {
 	4: 0
 }
 
-# Tambahkan variabel ini sebagai "gembok" agar pindah scene tidak spamming
 var is_game_over: bool = false 
 var winner_screen_scene = preload("res://scenes/winner/winner_layer.tscn")
 
 func _process(delta):
-	# Kalau waktu sudah habis dan scene mau pindah, hentikan eksekusi _process
 	if is_game_over:
 		return
 		
-	# Cek kalau game_timer belum habis
 	if game_timer.time_left > 0:
-		# Ambil sisa waktu dari node Timer
 		var time_left = game_timer.time_left
-		
-		# Ubah total detik menjadi format menit dan detik
 		var minutes = int(time_left) / 60
 		var seconds = int(time_left) % 60
 		
-		# Format teksnya jadi "MM:SS" (contoh: "01:30")
 		timer_label.text = "%02d:%02d" % [minutes, seconds]
 	else:
-		# Teks saat waktu habis
 		timer_label.text = "00:00"
 		
-		# Kunci gemboknya!
 		is_game_over = true
 		var winner = _find_winner()
 		_on_game_over(winner.id, winner.kills)
@@ -49,19 +40,19 @@ func _process(delta):
 func _ready():
 	add_to_group("game_scene") 
 	if Global.selected_players < 4:
-		$Arena/PlayerCapy4.queue_free()
+		$CanvasLayer/AspectRatioContainer/Arena/PlayerCapy4.queue_free()
 		$CanvasLayer/ZoneTopLeft.queue_free()
-		score_4p.hide() # Sembunyikan skor 4P
+		score_4p.hide() 
 		
 	if Global.selected_players < 3:
-		$Arena/PlayerCapy3.queue_free()
+		$CanvasLayer/AspectRatioContainer/Arena/PlayerCapy3.queue_free()
 		$CanvasLayer/ZoneBottomRight.queue_free()
-		score_3p.hide() # Sembunyikan skor 3P
+		score_3p.hide()
 		
 	if Global.selected_players < 2:
-		$Arena/PlayerCapy2.queue_free()
+		$CanvasLayer/AspectRatioContainer/Arena/PlayerCapy2.queue_free()
 		$CanvasLayer/ZoneTopRight.queue_free()
-		score_2p.hide() # Sembunyikan skor 2P
+		score_2p.hide() 
 
 
 func on_player_killed(player_id: int):
@@ -72,28 +63,22 @@ func on_player_killed(player_id: int):
 	_update_score_label(player_id)
 	
 func _on_game_over(player_id, kills):
-	# 1. Simpan data ke Global
 	Global.winner_id = player_id
 	Global.winner_kills = kills
-	
-	# 2. Munculkan Winner Screen
 	var winner_screen = winner_screen_scene.instantiate()
 	add_child(winner_screen)
-	
-	# 3. Opsional: Pause game agar tidak bergerak di belakang
 	get_tree().paused = true
 
 func _find_winner():
-	# Contoh logika: mencari player dengan angka kematian terendah
-	var min_deaths = 999
+	var max_kills = -1
 	var winner_id = 1
 	
 	for id in death_counts:
-		if death_counts[id] < min_deaths:
-			min_deaths = death_counts[id]
+		if death_counts[id] > max_kills:
+			max_kills = death_counts[id]
 			winner_id = id
 			
-	return {"id": winner_id, "kills": min_deaths}
+	return {"id": winner_id, "kills": max_kills}
 	
 func _update_score_label(player_id: int):
 	match player_id:
