@@ -14,7 +14,7 @@ const PLAYER_FRAMES = {
 	1: preload("res://art/characters/capy_basic.tres"),  # P1 - Cokelat
 	2: preload("res://art/characters/capy_green.tres"),  # P2 - Hijau
 	3: preload("res://art/characters/capy_red.tres"),    # P3 - Merah
-	4: preload("res://art/characters/capy_basic.tres")   # P4 - Kuning
+	4: preload("res://art/characters/capy_yellow.tres")   # P4 - Kuning
 }
 
 @onready var animated_sprite = $CapybaraWalk

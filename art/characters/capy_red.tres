@@ -1,11 +1,24 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://ckke03uk54rwk"]
 
+[ext_resource type="Texture2D" uid="uid://ct7wmanjqpq26" path="res://art/characters/capyIdle/idle-red.png" id="1_82mpk"]
 [ext_resource type="Texture2D" uid="uid://bhukd6mlf5qdl" path="res://art/characters/capyWalk/capy-walk-sprite-red.png" id="1_hxm38"]
 [ext_resource type="Texture2D" uid="uid://de12k8w4fvkxs" path="res://art/characters/capyPunch/cappy-punch-red.png" id="2_82mpk"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_82mpk"]
+atlas = ExtResource("1_82mpk")
+region = Rect2(0, 0, 296, 340)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ak4g0"]
-atlas = ExtResource("1_hxm38")
-region = Rect2(0, 0, 296, 336)
+atlas = ExtResource("1_82mpk")
+region = Rect2(592, 0, 296, 340)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ri54k"]
+atlas = ExtResource("1_82mpk")
+region = Rect2(296, 0, 296, 340)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vwyf"]
+atlas = ExtResource("1_82mpk")
+region = Rect2(592, 0, 296, 340)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ih384"]
 atlas = ExtResource("2_82mpk")
@@ -55,11 +68,20 @@ region = Rect2(592, 336, 296, 336)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_82mpk")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_ak4g0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ri54k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1vwyf")
 }],
 "loop": 1,
 "name": &"idle",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,

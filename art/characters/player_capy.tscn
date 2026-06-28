@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://chk6tbh4anjqe"]
 
 [ext_resource type="Script" uid="uid://cpb2pr86nws32" path="res://art/characters/player_capy.gd" id="1_fmtub"]
-[ext_resource type="SpriteFrames" uid="uid://cf0ssp3lhxkfx" path="res://art/characters/capy_basic.tres" id="2_fmtub"]
+[ext_resource type="SpriteFrames" uid="uid://c7u7fjh0xhe2" path="res://art/characters/capy_basic.tres" id="2_fmtub"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sg7pw"]
 size = Vector2(84, 78)
@@ -14,7 +14,7 @@ position = Vector2(0.99999994, -0.99999994)
 rotation = 4.717625
 scale = Vector2(0.4, 0.4)
 sprite_frames = ExtResource("2_fmtub")
-animation = &"idle"
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=729534183]
 position = Vector2(6, 0)
