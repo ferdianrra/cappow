@@ -157,13 +157,6 @@ position = Vector2(-176.09457, 108.93963)
 rotation = 0.007201472
 scale = Vector2(0.7, 0.742)
 player_id = 2
-move_speed = 300.0
-arena_radius = 280.0
-growth_per_grass = 0.15
-max_scale = 3.0
-outside_scale = 0.4
-transition_speed = 0.25
-bounce_force = 400.0
 joystick_node = NodePath("../../../ZoneTopRight/VBoxContainer/Joystick2")
 
 [node name="PlayerCapy3" parent="CanvasLayer/AspectRatioContainer/Arena" unique_id=1764218114 node_paths=PackedStringArray("joystick_node") groups=["capybara"] instance=ExtResource("6_lslp7")]
@@ -171,13 +164,6 @@ position = Vector2(-206.6416, -149.07529)
 rotation = 0.007201472
 scale = Vector2(0.7, 0.742)
 player_id = 3
-move_speed = 300.0
-arena_radius = 280.0
-growth_per_grass = 0.15
-max_scale = 3.0
-outside_scale = 0.4
-transition_speed = 0.25
-bounce_force = 400.0
 joystick_node = NodePath("../../../ZoneBottomRight/VBoxContainer/Joystick3")
 
 [node name="PlayerCapy4" parent="CanvasLayer/AspectRatioContainer/Arena" unique_id=725495268 node_paths=PackedStringArray("joystick_node") groups=["capybara"] instance=ExtResource("6_lslp7")]
@@ -185,27 +171,12 @@ position = Vector2(102.42241, -170.09872)
 rotation = 0.007201472
 scale = Vector2(0.7, 0.742)
 player_id = 4
-move_speed = 300.0
-arena_radius = 280.0
-growth_per_grass = 0.15
-max_scale = 3.0
-outside_scale = 0.4
-transition_speed = 0.25
-bounce_force = 400.0
 joystick_node = NodePath("../../../ZoneTopLeft/VBoxContainer/Joystick4")
 
 [node name="PlayerCapy1" parent="CanvasLayer/AspectRatioContainer/Arena" unique_id=1179526682 node_paths=PackedStringArray("joystick_node") groups=["capybara"] instance=ExtResource("6_lslp7")]
 position = Vector2(132.96942, 95.56108)
 rotation = 0.007201472
 scale = Vector2(0.7, 0.742)
-player_id = 1
-move_speed = 300.0
-arena_radius = 280.0
-growth_per_grass = 0.15
-max_scale = 3.0
-outside_scale = 0.4
-transition_speed = 0.25
-bounce_force = 400.0
 joystick_node = NodePath("../../../ZoneBottomLeft/VBoxContainer/Joystick")
 
 [node name="Grass" parent="CanvasLayer/AspectRatioContainer/Arena" unique_id=13430623 instance=ExtResource("5_s5oc3")]

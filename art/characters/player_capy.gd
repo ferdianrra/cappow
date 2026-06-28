@@ -10,20 +10,33 @@ extends CharacterBody2D
 @export var bounce_force: float = 400.0
 @export var joystick_node: Control
 
-@onready var animation_tree = $AnimationTree
-@onready var state_machine = animation_tree.get("parameters/playback")
+const PLAYER_FRAMES = {
+	1: preload("res://art/characters/capy_basic.tres"),  # P1 - Cokelat
+	2: preload("res://art/characters/capy_green.tres"),  # P2 - Hijau
+	3: preload("res://art/characters/capy_red.tres"),    # P3 - Merah
+	4: preload("res://art/characters/capy_basic.tres")   # P4 - Kuning
+}
+
+@onready var animated_sprite = $CapybaraWalk
 
 var arena_center: Vector2
 var is_outside = false
 var is_bounced = false
-var last_attacker_id: int = -1  
+var is_punching = false
+var is_respawning = false 
+var last_attacker_id: int = -1   
+
 func _ready():
 	arena_center = get_parent().global_position
-	add_to_group("capybara")  # pastikan masuk group ini biar collision & grass detection jalan
+	add_to_group("capybara")
+	if PLAYER_FRAMES.has(player_id):
+		animated_sprite.sprite_frames = PLAYER_FRAMES[player_id]
+	animated_sprite.animation_finished.connect(_on_animation_finished)
+	animated_sprite.play("idle")
 
 func _physics_process(_delta):
 	var input_dir = get_player_input()
-	update_animation_parameters(input_dir)
+	update_sprite_animation(input_dir)
 	
 	if not is_bounced:
 		velocity = input_dir * move_speed
@@ -35,40 +48,43 @@ func _physics_process(_delta):
 	update_rotation(input_dir)
 
 func get_player_input() -> Vector2:
-	# Jika joystick node sudah terpasang, ambil nilainya
 	if joystick_node:
 		return joystick_node.output_vector
-	
-	# Fallback (opsional): Kalau tidak ada joystick, tetap bisa pakai keyboard
+
 	match player_id:
-		1:
-			return Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-		2:
-			return Input.get_vector("p2_left", "p2_right", "p2_up", "p2_down")
-		3:
-			return Input.get_vector("p3_left", "p3_right", "p3_up", "p3_down")
-		4:
-			return Input.get_vector("p4_left", "p4_right", "p4_up", "p4_down")
+		1: return Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+		2: return Input.get_vector("p2_left", "p2_right", "p2_up", "p2_down")
+		3: return Input.get_vector("p3_left", "p3_right", "p3_up", "p3_down")
+		4: return Input.get_vector("p4_left", "p4_right", "p4_up", "p4_down")
 			
 	return Vector2.ZERO
 
 func check_collision_with_others():
+	if is_respawning:
+		return
+
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
 		
 		if collider.is_in_group("capybara") and collider != self:
+			if "is_respawning" in collider and collider.is_respawning:
+				continue
+
 			var bounce_direction = collision.get_normal() * -1
-			
-			# Makin besar scale capybara ini, makin kenceng dorongannya
 			var applied_force = bounce_force * scale.x
+
+			trigger_punch()
 			
 			if collider.has_method("get_bounced"):
-				collider.get_bounced(bounce_direction, applied_force, player_id)  # <- kirim player_id "gue"
+				collider.get_bounced(bounce_direction, applied_force, player_id) 
 				
 func get_bounced(direction: Vector2, force: float, attacker_id: int = -1):
+	if is_respawning:
+		return
+
 	is_bounced = true
-	last_attacker_id = attacker_id  # <- catat siapa yang baru nabrak
+	last_attacker_id = attacker_id 
 	velocity = direction * force
 	await get_tree().create_timer(0.3).timeout
 	is_bounced = false
@@ -79,26 +95,34 @@ func update_rotation(movie_input: Vector2):
 
 func grow_from_grass():
 	if is_outside:
-		return  # gak nambah growth kalau pas lagi di luar arena
-	
-	# Sedikit penyesuaian: pakai scale.x agar lebih konsisten dengan hitungan bounce
+		return 
+
 	var new_scale_magnitude = scale.x + growth_per_grass
 	new_scale_magnitude = clamp(new_scale_magnitude, 0.1, max_scale)
 	
 	var tween = create_tween()
 	tween.tween_property(self, "scale", Vector2.ONE * new_scale_magnitude, 0.2)
 
-func update_animation_parameters(movie_input: Vector2):
+func update_sprite_animation(movie_input: Vector2):
+	if is_punching:
+		return 
 	if movie_input != Vector2.ZERO:
-		animation_tree.set("parameters/Walk/blend_position", movie_input)
-		animation_tree.set("parameters/Idle/blend_position", movie_input)
-		state_machine.travel("Walk")
+		animated_sprite.play("walk")
 	else:
-		state_machine.travel("Idle")
+		animated_sprite.play("idle")
+
+func trigger_punch():
+	if not is_punching:
+		is_punching = true
+		animated_sprite.play("punch")
+
+func _on_animation_finished():
+	if animated_sprite.animation == "punch":
+		is_punching = false 
 
 func check_arena_boundary():
 	if is_outside:
-		return  # udah dalam proses respawn, skip biar gak ke-trigger dobel
+		return  
 		
 	var distance_from_center = global_position.distance_to(arena_center)
 	
@@ -122,8 +146,36 @@ func on_exit_arena():
 	respawn()
 	
 func respawn():
-	global_position = arena_center
-	scale = Vector2.ONE
+	var active_tweens = get_tree().get_processed_tweens()
+	for t in active_tweens:
+		if t.is_valid():
+			t.kill()
+	var max_random_radius = arena_radius * 0.7
+	var random_distance = randf_range(0.0, max_random_radius)
+	var random_angle = randf_range(0.0, 2.0 * PI)
+	var random_offset = Vector2(cos(random_angle), sin(random_angle)) * random_distance
+	global_position = arena_center + random_offset
+	scale = Vector2(0.5, 0.5) 
+	
 	visible = true
 	is_outside = false
 	set_physics_process(true)
+	is_respawning = true
+	
+	var original_layer = collision_layer
+	var original_mask = collision_mask
+	
+	collision_layer = 0 
+	collision_mask = 0  
+	
+	var tween = create_tween().set_loops(8) 
+	tween.tween_property(animated_sprite, "modulate:a", 0.2, 0.125) 
+	tween.tween_property(animated_sprite, "modulate:a", 1.0, 0.125) 
+	
+	await tween.finished
+
+	collision_layer = original_layer
+	collision_mask = original_mask
+
+	animated_sprite.modulate.a = 1.0
+	is_respawning = false
