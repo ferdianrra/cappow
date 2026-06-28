@@ -1,0 +1,19 @@
+extends TextureButton
+
+signal click_finished
+
+func _ready():
+	pivot_offset = size / 2
+
+
+func _on_button_down() -> void:
+	var tween = create_tween().set_parallel(true)
+	tween.tween_property(self, "scale", Vector2(1.1, 1.1), 0.15).set_trans(Tween.TRANS_CUBIC)
+	tween.tween_property(self, "modulate", Color(0.9, 0.9, 0.9), 0.15)
+
+func _on_button_up() -> void:
+	var tween = create_tween().set_parallel(true)
+	tween.tween_property(self, "scale", Vector2(1.0, 1.0), 0.2).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "modulate", Color(1.0, 1.0, 1.0), 0.2)
+	if is_hovered():
+		click_finished.emit()

@@ -119,22 +119,40 @@ corner_radius_bottom_left = 20
 corner_detail = 20
 
 [node name="GameSceneArena" type="Node2D" unique_id=311747993]
-position = Vector2(-9, 12)
+position = Vector2(-12, 35)
 script = ExtResource("1_nn5h6")
 
-[node name="OutsideArena" type="Sprite2D" parent="." unique_id=389830449]
-position = Vector2(587, 331)
-scale = Vector2(0.94793385, 0.8737658)
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1045075174]
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer" unique_id=2008257938]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+stretch_mode = 3
+
+[node name="OutsideArena2" type="Sprite2D" parent="CanvasLayer/AspectRatioContainer" unique_id=389830449]
+visible = false
 texture = ExtResource("2_qecvs")
 
-[node name="Arena" type="Sprite2D" parent="." unique_id=1936357486]
-position = Vector2(579.00006, 341)
+[node name="OutsideArena" type="TextureRect" parent="CanvasLayer/AspectRatioContainer" unique_id=1420973373]
+layout_mode = 2
+texture = ExtResource("2_qecvs")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Arena" type="Sprite2D" parent="CanvasLayer/AspectRatioContainer" unique_id=1936357486]
+position = Vector2(567.00006, 376)
 scale = Vector2(0.47602656, 0.4593799)
 texture = ExtResource("3_qecvs")
 script = ExtResource("4_r4538")
 grass_scene = ExtResource("5_s5oc3")
 
-[node name="PlayerCapy2" parent="Arena" unique_id=987455586 node_paths=PackedStringArray("joystick_node") groups=["capybara"] instance=ExtResource("6_lslp7")]
+[node name="PlayerCapy2" parent="CanvasLayer/AspectRatioContainer/Arena" unique_id=987455586 node_paths=PackedStringArray("joystick_node") groups=["capybara"] instance=ExtResource("6_lslp7")]
 position = Vector2(-176.09457, 108.93963)
 rotation = 0.007201472
 scale = Vector2(0.7, 0.742)
@@ -146,9 +164,9 @@ max_scale = 3.0
 outside_scale = 0.4
 transition_speed = 0.25
 bounce_force = 400.0
-joystick_node = NodePath("../../CanvasLayer/ZoneTopRight/VBoxContainer/Joystick2")
+joystick_node = NodePath("../../../ZoneTopRight/VBoxContainer/Joystick2")
 
-[node name="PlayerCapy3" parent="Arena" unique_id=1764218114 node_paths=PackedStringArray("joystick_node") groups=["capybara"] instance=ExtResource("6_lslp7")]
+[node name="PlayerCapy3" parent="CanvasLayer/AspectRatioContainer/Arena" unique_id=1764218114 node_paths=PackedStringArray("joystick_node") groups=["capybara"] instance=ExtResource("6_lslp7")]
 position = Vector2(-206.6416, -149.07529)
 rotation = 0.007201472
 scale = Vector2(0.7, 0.742)
@@ -160,9 +178,9 @@ max_scale = 3.0
 outside_scale = 0.4
 transition_speed = 0.25
 bounce_force = 400.0
-joystick_node = NodePath("../../CanvasLayer/ZoneBottomRight/VBoxContainer/Joystick3")
+joystick_node = NodePath("../../../ZoneBottomRight/VBoxContainer/Joystick3")
 
-[node name="PlayerCapy4" parent="Arena" unique_id=725495268 node_paths=PackedStringArray("joystick_node") groups=["capybara"] instance=ExtResource("6_lslp7")]
+[node name="PlayerCapy4" parent="CanvasLayer/AspectRatioContainer/Arena" unique_id=725495268 node_paths=PackedStringArray("joystick_node") groups=["capybara"] instance=ExtResource("6_lslp7")]
 position = Vector2(102.42241, -170.09872)
 rotation = 0.007201472
 scale = Vector2(0.7, 0.742)
@@ -174,9 +192,9 @@ max_scale = 3.0
 outside_scale = 0.4
 transition_speed = 0.25
 bounce_force = 400.0
-joystick_node = NodePath("../../CanvasLayer/ZoneTopLeft/VBoxContainer/Joystick4")
+joystick_node = NodePath("../../../ZoneTopLeft/VBoxContainer/Joystick4")
 
-[node name="PlayerCapy1" parent="Arena" unique_id=1179526682 node_paths=PackedStringArray("joystick_node") groups=["capybara"] instance=ExtResource("6_lslp7")]
+[node name="PlayerCapy1" parent="CanvasLayer/AspectRatioContainer/Arena" unique_id=1179526682 node_paths=PackedStringArray("joystick_node") groups=["capybara"] instance=ExtResource("6_lslp7")]
 position = Vector2(132.96942, 95.56108)
 rotation = 0.007201472
 scale = Vector2(0.7, 0.742)
@@ -188,18 +206,16 @@ max_scale = 3.0
 outside_scale = 0.4
 transition_speed = 0.25
 bounce_force = 400.0
-joystick_node = NodePath("../../CanvasLayer/ZoneBottomLeft/VBoxContainer/Joystick")
+joystick_node = NodePath("../../../ZoneBottomLeft/VBoxContainer/Joystick")
 
-[node name="Grass" parent="Arena" unique_id=13430623 instance=ExtResource("5_s5oc3")]
+[node name="Grass" parent="CanvasLayer/AspectRatioContainer/Arena" unique_id=13430623 instance=ExtResource("5_s5oc3")]
 position = Vector2(113.20367, 212.14555)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1045075174]
-
 [node name="TimerLabel" type="Label" parent="CanvasLayer" unique_id=1316937517]
-offset_left = 545.0
-offset_top = 49.0
-offset_right = 628.0
-offset_bottom = 114.0
+offset_left = 542.0
+offset_top = 72.0
+offset_right = 625.0
+offset_bottom = 137.0
 theme_override_colors/font_color = Color(0.36862746, 0.19215687, 0.03529412, 1)
 theme_override_fonts/font = ExtResource("8_4nuo1")
 theme_override_font_sizes/font_size = 30
@@ -208,18 +224,20 @@ text = "00:00
 horizontal_alignment = 1
 
 [node name="Scoreboard" type="HBoxContainer" parent="CanvasLayer" unique_id=1415670450]
-offset_left = 372.0
-offset_top = 68.0
-offset_right = 692.0
-offset_bottom = 108.0
+offset_left = 369.0
+offset_top = 91.0
+offset_right = 689.0
+offset_bottom = 131.0
 theme_override_constants/separation = 20
 
 [node name="ZoneBottomLeft" type="MarginContainer" parent="CanvasLayer" unique_id=1215493071]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -200.0
-offset_right = 92.0
+offset_left = -3.0
+offset_top = -187.0
+offset_right = 157.0
+offset_bottom = 23.0
 grow_vertical = 0
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_bottom = 40
@@ -277,9 +295,23 @@ horizontal_alignment = 1
 vertical_alignment = 1
 justification_flags = 3
 
+[node name="P1Label" type="Label" parent="CanvasLayer/ZoneBottomLeft/VBoxContainer" unique_id=1512275442]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("8_4nuo1")
+theme_override_font_sizes/font_size = 30
+text = "P1"
+horizontal_alignment = 1
+
 [node name="ZoneTopLeft" type="MarginContainer" parent="CanvasLayer" unique_id=2010746007]
-offset_right = 160.0
-offset_bottom = 210.0
+offset_left = -3.0
+offset_top = 23.0
+offset_right = 157.0
+offset_bottom = 233.0
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_bottom = 40
 
@@ -287,6 +319,19 @@ theme_override_constants/margin_bottom = 40
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_constants/separation = 20
+
+[node name="P2Label" type="Label" parent="CanvasLayer/ZoneTopLeft/VBoxContainer" unique_id=16302691]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("8_4nuo1")
+theme_override_font_sizes/font_size = 30
+text = "P4"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ScoreBg_4P" type="Panel" parent="CanvasLayer/ZoneTopLeft/VBoxContainer" unique_id=767419854]
 custom_minimum_size = Vector2(120, 70)
@@ -340,14 +385,16 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -160.0
-offset_top = -210.0
+offset_top = -221.0
 grow_horizontal = 0
 grow_vertical = 0
+size_flags_horizontal = 0
 theme_override_constants/margin_right = 40
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ZoneBottomRight" unique_id=58712745]
 layout_mode = 2
-size_flags_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -20)
 theme_override_constants/separation = 20
 
 [node name="Joystick3" parent="CanvasLayer/ZoneBottomRight/VBoxContainer" unique_id=1813404019 groups=["capybara"] instance=ExtResource("7_hv4ls")]
@@ -399,12 +446,27 @@ horizontal_alignment = 1
 vertical_alignment = 1
 justification_flags = 3
 
+[node name="P3Label" type="Label" parent="CanvasLayer/ZoneBottomRight/VBoxContainer" unique_id=1853783977]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("8_4nuo1")
+theme_override_font_sizes/font_size = 30
+text = "P3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="ZoneTopRight" type="MarginContainer" parent="CanvasLayer" unique_id=1902425582]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -160.0
-offset_bottom = 210.0
+offset_left = -163.0
+offset_top = 23.0
+offset_right = -3.0
+offset_bottom = 233.0
 grow_horizontal = 0
 theme_override_constants/margin_right = 40
 metadata/_edit_use_anchors_ = true
@@ -413,6 +475,19 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_constants/separation = 20
+
+[node name="P2Label" type="Label" parent="CanvasLayer/ZoneTopRight/VBoxContainer" unique_id=1497276003]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("8_4nuo1")
+theme_override_font_sizes/font_size = 30
+text = "P2"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ScoreBg_2P" type="Panel" parent="CanvasLayer/ZoneTopRight/VBoxContainer" unique_id=2053968361]
 custom_minimum_size = Vector2(120, 70)

@@ -1,0 +1,169 @@
+[gd_scene format=3 uid="uid://bje781xwr71dw"]
+
+[ext_resource type="Texture2D" uid="uid://coco7jb02p5yh" path="res://scenes/character_select/character_select_background.png" id="1_8ucmb"]
+[ext_resource type="Script" uid="uid://bjwojc6d5njp6" path="res://scenes/guide_game/guide_game.gd" id="1_ranvt"]
+[ext_resource type="Texture2D" uid="uid://cvx3bau48dhhy" path="res://scenes/guide_game/back_button.png" id="2_3ixq3"]
+[ext_resource type="FontFile" uid="uid://hsdjnqqby1qh" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="3_m1vrp"]
+[ext_resource type="Script" uid="uid://bpmgaou1av36u" path="res://scenes/menu/button_behavior.gd" id="4_qxcsp"]
+[ext_resource type="Texture2D" uid="uid://ble1iwpycoajg" path="res://scenes/guide_game/Guide_1.png" id="4_ranvt"]
+[ext_resource type="Texture2D" uid="uid://c86c18soqnydy" path="res://scenes/winner/brown_button_background.png" id="6_es63n"]
+[ext_resource type="Texture2D" uid="uid://cmds8ir32lgx7" path="res://scenes/guide_game/Guide_2.png" id="6_mxjcm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mxjcm"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+corner_detail = 10
+
+[node name="GuideGame" type="Control" unique_id=1292346258]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_ranvt")
+
+[node name="Background" type="TextureRect" parent="." unique_id=579311709]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_8ucmb")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=457531344]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="GuidePlayContainer" type="VBoxContainer" parent="MarginContainer" unique_id=502057238]
+propagate_maximum_size = false
+layout_mode = 2
+theme_override_constants/separation = 36
+alignment = 1
+
+[node name="BackButton" type="TextureButton" parent="MarginContainer/GuidePlayContainer" unique_id=426920255]
+custom_minimum_size = Vector2(78.5, 69)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = ExtResource("2_3ixq3")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("4_qxcsp")
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/GuidePlayContainer" unique_id=1497109995]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.36862746, 0.19215687, 0.03529412, 1)
+theme_override_fonts/font = ExtResource("3_m1vrp")
+theme_override_font_sizes/font_size = 44
+text = "How To Play"
+horizontal_alignment = 1
+
+[node name="Slides" type="Control" parent="MarginContainer/GuidePlayContainer" unique_id=232661345]
+custom_minimum_size = Vector2(900, 300)
+layout_mode = 2
+
+[node name="Slide1" type="TextureRect" parent="MarginContainer/GuidePlayContainer/Slides" unique_id=1403149637]
+custom_minimum_size = Vector2(900, 300)
+clip_contents = true
+layout_mode = 0
+offset_left = 135.0
+offset_right = 1035.0
+offset_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+texture = ExtResource("4_ranvt")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Slide2" type="TextureRect" parent="MarginContainer/GuidePlayContainer/Slides" unique_id=1060778649]
+custom_minimum_size = Vector2(900, 300)
+layout_mode = 0
+offset_left = 1280.0
+offset_right = 2180.0
+offset_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+texture = ExtResource("6_mxjcm")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NavgiationContainer" type="HBoxContainer" parent="MarginContainer/GuidePlayContainer" unique_id=1211091861]
+propagate_maximum_size = false
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 90
+alignment = 2
+
+[node name="DotContainer" type="HBoxContainer" parent="MarginContainer/GuidePlayContainer/NavgiationContainer" unique_id=1113415614]
+clip_contents = true
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Dot1" type="Panel" parent="MarginContainer/GuidePlayContainer/NavgiationContainer/DotContainer" unique_id=2021549188]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_mxjcm")
+
+[node name="Dot2" type="Panel" parent="MarginContainer/GuidePlayContainer/NavgiationContainer/DotContainer" unique_id=422302268]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_mxjcm")
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/GuidePlayContainer/NavgiationContainer" unique_id=169147910]
+custom_minimum_size = Vector2(434, 82)
+layout_mode = 2
+texture_normal = ExtResource("6_es63n")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("4_qxcsp")
+
+[node name="NextLabel" type="Label" parent="MarginContainer/GuidePlayContainer/NavgiationContainer/TextureButton" unique_id=1796193488]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.5
+offset_top = -25.5
+offset_right = 148.5
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 9)
+theme_override_colors/font_color = Color(0.36862746, 0.19215687, 0.03529412, 1)
+theme_override_fonts/font = ExtResource("3_m1vrp")
+theme_override_font_sizes/font_size = 50
+text = "Next"
+horizontal_alignment = 1
+
+[connection signal="button_down" from="MarginContainer/GuidePlayContainer/BackButton" to="MarginContainer/GuidePlayContainer/BackButton" method="_on_button_down"]
+[connection signal="button_up" from="MarginContainer/GuidePlayContainer/BackButton" to="MarginContainer/GuidePlayContainer/BackButton" method="_on_button_up"]
+[connection signal="button_down" from="MarginContainer/GuidePlayContainer/NavgiationContainer/TextureButton" to="MarginContainer/GuidePlayContainer/NavgiationContainer/TextureButton" method="_on_button_down"]
+[connection signal="button_up" from="MarginContainer/GuidePlayContainer/NavgiationContainer/TextureButton" to="MarginContainer/GuidePlayContainer/NavgiationContainer/TextureButton" method="_on_button_up"]
