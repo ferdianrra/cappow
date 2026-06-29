@@ -19,7 +19,8 @@ const PLAYER_FRAMES = {
 
 # Preload the POW effect scene we made in Step 1
 const POW_EFFECT_SCENE = preload("res://scenes/effects/punch_effect.tscn")
-
+# Add this at the top with your other preloads
+const CAPPOW_EFFECT_SCENE = preload("res://scenes/effects/cappow_effect.tscn")
 
 @onready var animated_sprite = $CapybaraWalk
 
@@ -149,6 +150,13 @@ func on_exit_arena():
 			game_scene.on_player_killed(last_attacker_id)
 
 	last_attacker_id = -1
+	
+	# ← ADD THIS BLOCK
+	if CAPPOW_EFFECT_SCENE:
+		var effect = CAPPOW_EFFECT_SCENE.instantiate()
+		get_parent().add_child(effect)
+		effect.global_position = global_position
+		effect.z_index = 100
 	
 	visible = false
 	set_physics_process(false)

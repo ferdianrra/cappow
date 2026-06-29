@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://1e2d5qjhvovh"]
+
+[ext_resource type="Texture2D" uid="uid://dqysj7bpmylwl" path="res://art/effects/cappow-effect-2.png" id="1_b22nq"]
+[ext_resource type="Script" uid="uid://d3u1y5qwv5t6u" path="res://punch_effect.gd" id="2_cc1sv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cc1sv"]
+atlas = ExtResource("1_b22nq")
+region = Rect2(0, 0, 491, 586)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m38ls"]
+atlas = ExtResource("1_b22nq")
+region = Rect2(491, 0, 491, 586)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mv8u"]
+atlas = ExtResource("1_b22nq")
+region = Rect2(982, 0, 491, 586)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4rlbf"]
+atlas = ExtResource("1_b22nq")
+region = Rect2(1473, 0, 491, 586)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jy7ie"]
+atlas = ExtResource("1_b22nq")
+region = Rect2(0, 586, 491, 586)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tp12u"]
+atlas = ExtResource("1_b22nq")
+region = Rect2(491, 586, 491, 586)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0msb"]
+atlas = ExtResource("1_b22nq")
+region = Rect2(982, 586, 491, 586)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6g3k4"]
+atlas = ExtResource("1_b22nq")
+region = Rect2(1473, 586, 491, 586)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3fmn2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cc1sv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m38ls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mv8u")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_4rlbf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jy7ie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tp12u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0msb")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_6g3k4")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="CappowEffect" type="AnimatedSprite2D" unique_id=1339762211]
+z_index = 100
+position = Vector2(-2, 12.000004)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_3fmn2")
+autoplay = "default"
+frame = 7
+frame_progress = 1.0
+script = ExtResource("2_cc1sv")
