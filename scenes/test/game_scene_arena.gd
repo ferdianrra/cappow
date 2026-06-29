@@ -50,6 +50,8 @@ func _ready():
 		$CanvasLayer/AspectRatioContainer/Arena/PlayerCapy2.queue_free()
 		$CanvasLayer/ZoneTopRight.queue_free()
 		score_2p.hide() 
+		
+	AudioManager.play_battle_music()
 
 
 func on_player_killed(player_id: int):

@@ -21,6 +21,7 @@ boot_splash/minimum_display_time=1000
 [autoload]
 
 Global="*uid://b3o6rohibg0g5"
+AudioManager="*uid://dwsqvo78catq5"
 
 [display]
 
