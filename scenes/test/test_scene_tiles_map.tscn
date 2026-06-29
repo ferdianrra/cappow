@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dwv51gkca88kq" path="res://scenes/test/grass.tscn" id="5_dfvrc"]
 [ext_resource type="PackedScene" uid="uid://pfg4mtqvjqe8" path="res://joystick.tscn" id="6_dfvrc"]
 [ext_resource type="PackedScene" uid="uid://ln12eauuyjbu" path="res://art/objects/character_body_2d.tscn" id="6_s6k7s"]
-[ext_resource type="SpriteFrames" uid="uid://cgvrrj8efrl8k" path="res://assets/sprite_frames/capybara.tres" id="7_8md68"]
+[ext_resource type="SpriteFrames" uid="uid://c7u7fjh0xhe2" path="res://art/characters/capy_basic.tres" id="6_ywayf"]
 [ext_resource type="SpriteFrames" uid="uid://blepmwld701hv" path="res://assets/sprite_frames/capybara_red.tres" id="8_566l3"]
 
 [node name="TestSceneTilesMap" type="Node2D" unique_id=311747993]
@@ -30,7 +30,7 @@ position = Vector2(-57.500275, 215.968)
 [node name="Capy" parent="Arena" unique_id=1091737448 node_paths=PackedStringArray("joystick_node") groups=["capybara"] instance=ExtResource("6_s6k7s")]
 position = Vector2(260.54813, 66.89274)
 joystick_node = NodePath("../../CanvasLayer/Joystick")
-sprite_frames = ExtResource("7_8md68")
+sprite_frames = ExtResource("6_ywayf")
 
 [node name="Capy2" parent="Arena" unique_id=1143565998 node_paths=PackedStringArray("joystick_node") groups=["capybara"] instance=ExtResource("6_s6k7s")]
 position = Vector2(-100.62546, -149.07529)

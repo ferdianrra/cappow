@@ -9,6 +9,7 @@ extends CharacterBody2D
 @export var transition_speed: float = 0.25
 @export var bounce_force: float = 400.0
 @export var joystick_node: Control
+@export var size_speed_penalty: float = 0.5 
 
 # Add this new export to assign SpriteFrames per player
 @export var sprite_frames: SpriteFrames
@@ -34,7 +35,11 @@ func _physics_process(_delta):
 	var input_dir = get_player_input()
 	
 	if not is_bounced:
-		velocity = input_dir * move_speed
+		var growth_ratio = (scale.x - 1.0) / (max_scale - 1.0)
+		growth_ratio = clamp(growth_ratio, 0.0, 1.0)
+		
+		var speed_multiplier = 1.0 - growth_ratio * size_speed_penalty
+		velocity = input_dir * move_speed * speed_multiplier
 	
 	move_and_slide()
 	
@@ -93,17 +98,17 @@ func update_sprite_animation(movie_input: Vector2):
 		return
 
 	if movie_input != Vector2.ZERO:
-		animated_sprite.play("walk")  # ✅ No more -red suffix
+		animated_sprite.play("walk")  
 	else:
-		animated_sprite.play("idle")  # ✅ No more -red suffix
+		animated_sprite.play("idle")  
 
 func trigger_punch():
 	if not is_punching:
 		is_punching = true
-		animated_sprite.play("punch")  # ✅ No more -red suffix
+		animated_sprite.play("punch")  
 
 func _on_animation_finished():
-	if animated_sprite.animation == "punch":  # ✅ No more -red suffix
+	if animated_sprite.animation == "punch": 
 		is_punching = false
 
 func check_arena_boundary():

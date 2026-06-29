@@ -146,8 +146,8 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="Arena" type="Sprite2D" parent="CanvasLayer/AspectRatioContainer" unique_id=1936357486]
-position = Vector2(567.00006, 376)
-scale = Vector2(0.47602656, 0.4593799)
+position = Vector2(601.7657, 358.9844)
+scale = Vector2(0.53, 0.53)
 texture = ExtResource("3_qecvs")
 script = ExtResource("4_r4538")
 grass_scene = ExtResource("5_s5oc3")
@@ -183,10 +183,10 @@ joystick_node = NodePath("../../../ZoneBottomLeft/VBoxContainer/Joystick")
 position = Vector2(113.20367, 212.14555)
 
 [node name="TimerLabel" type="Label" parent="CanvasLayer" unique_id=1316937517]
-offset_left = 542.0
-offset_top = 72.0
-offset_right = 625.0
-offset_bottom = 137.0
+offset_left = 552.0
+offset_top = 24.0
+offset_right = 635.0
+offset_bottom = 89.0
 theme_override_colors/font_color = Color(0.36862746, 0.19215687, 0.03529412, 1)
 theme_override_fonts/font = ExtResource("8_4nuo1")
 theme_override_font_sizes/font_size = 30
@@ -285,6 +285,9 @@ offset_right = 157.0
 offset_bottom = 233.0
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_bottom = 40
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/ZoneTopLeft" unique_id=366344218]
+layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ZoneTopLeft" unique_id=2129290944]
 layout_mode = 2

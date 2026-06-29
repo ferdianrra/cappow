@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" format=3 uid="uid://cf0ssp3lhxkfx"]
+[gd_resource type="SpriteFrames" format=3 uid="uid://cf4rvn73ub2qr"]
 
 [ext_resource type="Texture2D" uid="uid://dfp31j5c4ydpv" path="res://art/characters/capyIdle/idle-yellow.png" id="1_4tap5"]
 [ext_resource type="Texture2D" uid="uid://bqf0bv6q6r70j" path="res://art/characters/capyPunch/capy-punch-yellow.png" id="2_bo5mn"]
