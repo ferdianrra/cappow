@@ -22,6 +22,8 @@ const POW_EFFECT_SCENE = preload("res://scenes/effects/punch_effect.tscn")
 # Add this at the top with your other preloads
 const CAPPOW_EFFECT_SCENE = preload("res://scenes/effects/cappow_effect.tscn")
 
+@onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
 @onready var animated_sprite = $CapybaraWalk
 
 var arena_center: Vector2
@@ -157,6 +159,10 @@ func on_exit_arena():
 		get_parent().add_child(effect)
 		effect.global_position = global_position
 		effect.z_index = 100
+		
+	# 3. Play the punch sound effect!
+	if audio_player and audio_player.stream:
+		audio_player.play()
 	
 	visible = false
 	set_physics_process(false)

@@ -2,6 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://c30oryssyet1r" path="res://art/effects/pow-sprite-sheet.png" id="1_mt1c8"]
 [ext_resource type="Script" uid="uid://d3u1y5qwv5t6u" path="res://punch_effect.gd" id="2_68yq4"]
+[ext_resource type="AudioStream" uid="uid://cyi2pi12a30jt" path="res://art/effects/pow-effect-rafi-[AudioTrimmer.com].wav" id="3_68yq4"]
+[ext_resource type="AudioStream" uid="uid://bpwyq1nkocy0p" path="res://art/effects/pow-effect-bryan.wav" id="4_67881"]
+[ext_resource type="AudioStream" uid="uid://chcp38nqjtvqx" path="res://art/effects/pow-effect-fairuz.wav" id="5_27trm"]
+[ext_resource type="AudioStream" uid="uid://d1qphxo4fixgi" path="res://art/effects/pow-effect-ferdi.wav" id="6_w0ee7"]
+[ext_resource type="AudioStream" uid="uid://ba0t8x66r2l8k" path="res://art/effects/pow-effect-sendi.wav" id="7_xh4py"]
+[ext_resource type="AudioStream" uid="uid://rvisesm3ok8h" path="res://art/effects/pow-effect-zaki.wav" id="8_bsrvq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_68yq4"]
 atlas = ExtResource("1_mt1c8")
@@ -39,6 +45,15 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_dju1l"]
+streams_count = 6
+stream_0/stream = ExtResource("3_68yq4")
+stream_1/stream = ExtResource("4_67881")
+stream_2/stream = ExtResource("5_27trm")
+stream_3/stream = ExtResource("6_w0ee7")
+stream_4/stream = ExtResource("7_xh4py")
+stream_5/stream = ExtResource("8_bsrvq")
+
 [node name="PunchEffect" type="AnimatedSprite2D" unique_id=1339762211]
 z_index = 100
 position = Vector2(-2, 12.000004)
@@ -48,3 +63,6 @@ autoplay = "default"
 frame = 3
 frame_progress = 1.0
 script = ExtResource("2_68yq4")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1448257777]
+stream = SubResource("AudioStreamRandomizer_dju1l")

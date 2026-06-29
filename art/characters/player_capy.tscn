@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cpb2pr86nws32" path="res://art/characters/player_capy.gd" id="1_fmtub"]
 [ext_resource type="SpriteFrames" uid="uid://c7u7fjh0xhe2" path="res://art/characters/capy_basic.tres" id="2_fmtub"]
+[ext_resource type="AudioStream" uid="uid://cqcj3ahbgw2vh" path="res://art/effects/cappow-final-[AudioTrimmer.com].wav" id="3_xq1uh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sg7pw"]
 size = Vector2(84, 78)
@@ -22,3 +23,6 @@ position = Vector2(6, 0)
 shape = SubResource("RectangleShape2D_sg7pw")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1137665620]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1757617662]
+stream = ExtResource("3_xq1uh")
