@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://bhpxmn2mud14f"]
+
+[ext_resource type="Texture2D" uid="uid://c30oryssyet1r" path="res://art/effects/pow-sprite-sheet.png" id="1_mt1c8"]
+[ext_resource type="Script" uid="uid://d3u1y5qwv5t6u" path="res://punch_effect.gd" id="2_68yq4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68yq4"]
+atlas = ExtResource("1_mt1c8")
+region = Rect2(0, 0, 128, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dju1l"]
+atlas = ExtResource("1_mt1c8")
+region = Rect2(128, 0, 128, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_co84o"]
+atlas = ExtResource("1_mt1c8")
+region = Rect2(256, 0, 128, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jq3fo"]
+atlas = ExtResource("1_mt1c8")
+region = Rect2(384, 0, 128, 130)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3fmn2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68yq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dju1l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_co84o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jq3fo")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="PunchEffect" type="AnimatedSprite2D" unique_id=1339762211]
+z_index = 100
+position = Vector2(-2, 12.000004)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_3fmn2")
+autoplay = "default"
+frame = 3
+frame_progress = 1.0
+script = ExtResource("2_68yq4")
